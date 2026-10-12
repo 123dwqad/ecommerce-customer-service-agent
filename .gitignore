@@ -13,3 +13,8 @@ __pycache__/
 data/
 .idea/
 .vscode/
+
+# Local Word documents
+/电商问题.doc
+/面试常见问答.doc
+/README.full.md
