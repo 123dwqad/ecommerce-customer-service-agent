@@ -1,0 +1,21 @@
+D:\ChunZhao\Agent - ����\.venv\Lib\site-packages\langgraph\cache\base\__init__.py:8: LangChainPendingDeprecationWarning: The default value of `allowed_objects` will change in a future version. Pass an explicit value (e.g., allowed_objects='messages' or allowed_objects='core') to suppress this warning.
+  from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
+MinerU online parse failed for FAQ_��װѡ����ϴ����������.pdf during downloading MinerU result archive (ConnectError); falling back to pdfplumber
+Remote embedding unavailable, falling back to local hash embedding: Request timed out.
+Qdrant dim mismatch (1024 != 384) with non-empty collection, skipping upsert
+MinerU online parse failed for FAQ_���Ӳ�Ʒ��������.pdf during requesting upload URL (ConnectError); falling back to pdfplumber
+Qdrant dim mismatch (1024 != 384) with non-empty collection, skipping upsert
+MinerU online parse failed for �ۺ�����_�ۺ��������.pdf during requesting upload URL (ConnectError); falling back to pdfplumber
+Qdrant dim mismatch (1024 != 384) with non-empty collection, skipping upsert
+MinerU online parse failed for �ۺ�����_�˻�������˵��.pdf during uploading PDF to MinerU object storage (ConnectError); falling back to pdfplumber
+Qdrant dim mismatch (1024 != 384) with non-empty collection, skipping upsert
+MinerU online parse failed for ��Ʒ˵��_��Я��������P102.pdf during requesting upload URL (ConnectError); falling back to pdfplumber
+Qdrant dim mismatch (1024 != 384) with non-empty collection, skipping upsert
+MinerU online parse failed for ��Ʒ˵��_������Ʒϵ��P300-P304.pdf during polling MinerU parse job (ConnectError); falling back to pdfplumber
+Qdrant dim mismatch (1024 != 384) with non-empty collection, skipping upsert
+MinerU online parse failed for ��Ʒ˵��_��װϵ��P200-P205.pdf during requesting upload URL (ConnectError); falling back to pdfplumber
+Qdrant dim mismatch (1024 != 384) with non-empty collection, skipping upsert
+MinerU online parse failed for ��Ʒ˵��_�����Ķ���P106.pdf during requesting upload URL (ConnectError); falling back to pdfplumber
+Qdrant dim mismatch (1024 != 384) with non-empty collection, skipping upsert
+MinerU online parse failed for ��Ʒ˵��_�������߶���P100.pdf during uploading PDF to MinerU object storage (ConnectError); falling back to pdfplumber
+Qdrant dim mismatch (1024 != 384) with non-empty collection, skipping upsert

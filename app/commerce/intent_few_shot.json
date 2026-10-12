@@ -1,0 +1,18 @@
+[
+  {"input":"这单还能退吗","output":{"intent":"after_sales","slots":{},"needs_clarification":false}},
+  {"input":"帮我申请订单 ODEMO001007 的退货","output":{"intent":"create_after_sale","slots":{"order_id":"ODEMO001007"},"needs_clarification":false}},
+  {"input":"退货审核到哪了","output":{"intent":"after_sale_query","slots":{},"needs_clarification":false}},
+  {"input":"那它审核过了吗","context":{"intent":"after_sale_query","order_id":"ODEMO001009"},"output":{"intent":"after_sale_query","slots":{"order_id":"ODEMO001009"},"needs_clarification":false}},
+  {"input":"先别退了，我就想知道之前那个申请处理得怎么样","output":{"intent":"after_sale_query","slots":{},"needs_clarification":false}},
+  {"input":"我不想取消订单，只想看看物流","output":{"intent":"logistics_query","slots":{},"needs_clarification":false}},
+  {"input":"订单能取消吗","output":{"intent":"rule_query","slots":{"rule_topic":"cancellation"},"needs_clarification":false}},
+  {"input":"帮我取消订单 ODEMO001002","output":{"intent":"cancel_order","slots":{"order_id":"ODEMO001002"},"needs_clarification":false}},
+  {"input":"取消售后申请","output":{"intent":"other","slots":{},"needs_clarification":true}},
+  {"input":"P100 买三件送新疆多少钱运费","output":{"intent":"rule_query","slots":{"product_id":"P100","quantity":3,"region":"remote","rule_topic":"shipping_fee"},"needs_clarification":false}},
+  {"input":"P100 能隔绝外界噪声吗","output":{"intent":"product_consult","slots":{"product_id":"P100"},"needs_clarification":false}},
+  {"input":"我之前买过哪些东西","output":{"intent":"order_query","slots":{},"needs_clarification":false}},
+  {"input":"找个真人客服帮我处理","output":{"intent":"handoff","slots":{},"needs_clarification":false}},
+  {"input":"你好","output":{"intent":"other","slots":{},"needs_clarification":false}},
+  {"input":"查 A 订单物流，取消 B 订单","output":{"intent":"other","slots":{},"needs_clarification":true}},
+  {"input":"继续","context":{"intent":"create_after_sale"},"output":{"intent":"other","slots":{},"needs_clarification":true}}
+]

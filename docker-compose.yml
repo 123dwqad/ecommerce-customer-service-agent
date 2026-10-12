@@ -1,0 +1,86 @@
+services:
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - commerce_redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${COMMERCE_MYSQL_ROOT_PASSWORD:?Generate .env.prod first}
+      MYSQL_DATABASE: commerce
+      MYSQL_USER: commerce
+      MYSQL_PASSWORD: ${COMMERCE_MYSQL_PASSWORD:?Generate .env.prod first}
+    volumes:
+      - commerce_mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "MYSQL_PWD=$$MYSQL_PASSWORD mysqladmin ping -h 127.0.0.1 -ucommerce --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+  mcp:
+    build: .
+    restart: unless-stopped
+    command: ["python", "-m", "mcp_server.server"]
+    environment: &commerce-env
+      COMMERCE_DATABASE_URL: mysql+pymysql://commerce:${COMMERCE_MYSQL_PASSWORD}@mysql:3306/commerce?charset=utf8mb4
+      COMMERCE_SIGNING_KEY: ${COMMERCE_SIGNING_KEY:?Generate .env.prod first}
+      COMMERCE_TOOL_TRANSPORT: mcp
+      COMMERCE_MCP_URL: http://mcp:8004/sse
+      COMMERCE_REDIS_URL: redis://redis:6379/0
+      COMMERCE_DEMO_ENABLED: ${COMMERCE_DEMO_ENABLED:-true}
+      COMMERCE_LLM_ENABLED: ${COMMERCE_LLM_ENABLED:-false}
+      COMMERCE_INTENT_ENABLED: ${COMMERCE_INTENT_ENABLED:-false}
+      COMMERCE_INTENT_MODEL: ${COMMERCE_INTENT_MODEL:-qwen-plus}
+      COMMERCE_INTENT_TIMEOUT_SECONDS: ${COMMERCE_INTENT_TIMEOUT_SECONDS:-8}
+      COMMERCE_INTENT_MAX_RETRIES: ${COMMERCE_INTENT_MAX_RETRIES:-1}
+      COMMERCE_INTENT_TRUST_ENV: ${COMMERCE_INTENT_TRUST_ENV:-false}
+      COMMERCE_INTENT_API_KEY: ${COMMERCE_INTENT_API_KEY:-}
+      COMMERCE_INTENT_BASE_URL: ${COMMERCE_INTENT_BASE_URL:-https://dashscope.aliyuncs.com/compatible-mode/v1}
+      DASHSCOPE_API_KEY: ${DASHSCOPE_API_KEY:-}
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import socket; socket.create_connection(('127.0.0.1',8004),3).close()"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  api:
+    build: .
+    restart: unless-stopped
+    environment: *commerce-env
+    env_file:
+      - path: .env.multimodal
+        required: false
+    depends_on:
+      redis:
+        condition: service_healthy
+      mcp:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health',timeout=3)"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  nginx:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    ports:
+      - "${COMMERCE_HTTP_PORT:-8080}:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+      - ./deploy/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      api:
+        condition: service_healthy
+volumes:
+  commerce_redis:
+  commerce_mysql:

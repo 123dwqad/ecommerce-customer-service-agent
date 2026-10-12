@@ -1,0 +1,1696 @@
+[
+  {
+    "id": "model_product_consult_01",
+    "query": "我之前以为这事很简单，不过现在想确认：P100 戴久了耳朵会不会闷，主动降噪到底支不支持？",
+    "context": {},
+    "expected_intent": "product_consult",
+    "expected_slots": {
+      "product_id": "P100"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_product_consult_02",
+    "query": "我可能没表达清楚，但是具体想问：P101 在地铁里听歌，降噪效果怎么样？",
+    "context": {},
+    "expected_intent": "product_consult",
+    "expected_slots": {
+      "product_id": "P101"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_product_consult_03",
+    "query": "我担心理解有偏差，不过请按这个问题判断：P102 满电后大概能连续播放多久？",
+    "context": {},
+    "expected_intent": "product_consult",
+    "expected_slots": {
+      "product_id": "P102"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_product_consult_04",
+    "query": "我换个说法，不过我真正想确认的是：P103 这个移动电源的实际容量是多少？",
+    "context": {},
+    "expected_intent": "product_consult",
+    "expected_slots": {
+      "product_id": "P103"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_product_consult_05",
+    "query": "前面的背景先放一边，不过我这次想问：P104 连接电脑是用接收器还是蓝牙？",
+    "context": {},
+    "expected_intent": "product_consult",
+    "expected_slots": {
+      "product_id": "P104"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_product_consult_06",
+    "query": "我刚才说得有点绕，但是核心问题是：P105 这个键盘是全尺寸还是紧凑布局？",
+    "context": {},
+    "expected_intent": "product_consult",
+    "expected_slots": {
+      "product_id": "P105"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_product_consult_07",
+    "query": "我不是在问其他事情，而是想确认：P106 阅读灯能不能调成偏暖的光？",
+    "context": {},
+    "expected_intent": "product_consult",
+    "expected_slots": {
+      "product_id": "P106"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_product_consult_08",
+    "query": "我原先以为情况不同，不过现在要问：这个版型穿起来会不会偏宽松？",
+    "context": {
+      "intent": "product_consult",
+      "product_id": "P201"
+    },
+    "expected_intent": "product_consult",
+    "expected_slots": {
+      "product_id": "P201"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_product_consult_09",
+    "query": "我重新描述一下，但是诉求还是：P203 碰到小雨能不能穿，防水到什么程度？",
+    "context": {},
+    "expected_intent": "product_consult",
+    "expected_slots": {
+      "product_id": "P203"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_product_consult_10",
+    "query": "为了避免理解错，我再说清楚，不过我想问：P304 放五寸照片会不会太松？",
+    "context": {},
+    "expected_intent": "product_consult",
+    "expected_slots": {
+      "product_id": "P304"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_rule_query_01",
+    "query": "我之前以为这事很简单，不过现在想确认：P100 一次买三件，库存和限购能不能满足？",
+    "context": {},
+    "expected_intent": "rule_query",
+    "expected_slots": {
+      "product_id": "P100",
+      "quantity": 3,
+      "rule_topic": "purchase"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_rule_query_02",
+    "query": "我可能没表达清楚，但是具体想问：P100 买五件的话，优惠券能和满减叠加吗？",
+    "context": {},
+    "expected_intent": "rule_query",
+    "expected_slots": {
+      "product_id": "P100",
+      "quantity": 5,
+      "rule_topic": "coupon"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_rule_query_03",
+    "query": "我担心理解有偏差，不过请按这个问题判断：P100 买两件寄新疆，运费怎么算？",
+    "context": {},
+    "expected_intent": "rule_query",
+    "expected_slots": {
+      "product_id": "P100",
+      "quantity": 2,
+      "region": "remote",
+      "rule_topic": "shipping_fee"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_rule_query_04",
+    "query": "我换个说法，不过我真正想确认的是：订单 ODEMO001001 已付款，通常多久会发出？",
+    "context": {},
+    "expected_intent": "rule_query",
+    "expected_slots": {
+      "order_id": "ODEMO001001",
+      "rule_topic": "dispatch"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_rule_query_05",
+    "query": "前面的背景先放一边，不过我这次想问：订单 ODEMO001002 付款之后还能不能换收货地址？",
+    "context": {},
+    "expected_intent": "rule_query",
+    "expected_slots": {
+      "order_id": "ODEMO001002",
+      "rule_topic": "address_change"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_rule_query_06",
+    "query": "我刚才说得有点绕，但是核心问题是：订单 ODEMO001003 现在符合申请电子发票的条件吗？",
+    "context": {},
+    "expected_intent": "rule_query",
+    "expected_slots": {
+      "order_id": "ODEMO001003",
+      "rule_topic": "invoice"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_rule_query_07",
+    "query": "我不是在问其他事情，而是想确认：订单 ODEMO001004 如果商品降价，保价期限是多久？",
+    "context": {},
+    "expected_intent": "rule_query",
+    "expected_slots": {
+      "order_id": "ODEMO001004",
+      "rule_topic": "price_protection"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_rule_query_08",
+    "query": "我原先以为情况不同，不过现在要问：订单 ODEMO001005 多久没物流更新才算停滞？",
+    "context": {},
+    "expected_intent": "rule_query",
+    "expected_slots": {
+      "order_id": "ODEMO001005",
+      "rule_topic": "logistics_delay"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_rule_query_09",
+    "query": "我重新描述一下，但是诉求还是：待付款订单 ODEMO001006 可以直接取消吗？",
+    "context": {},
+    "expected_intent": "rule_query",
+    "expected_slots": {
+      "order_id": "ODEMO001006",
+      "rule_topic": "cancellation"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_rule_query_10",
+    "query": "为了避免理解错，我再说清楚，不过我想问：P200 买两件，达到优惠门槛以后可以减多少？",
+    "context": {},
+    "expected_intent": "rule_query",
+    "expected_slots": {
+      "product_id": "P200",
+      "quantity": 2,
+      "rule_topic": "coupon"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_order_query_01",
+    "query": "我之前以为这事很简单，不过现在想确认：帮我看下订单 ODEMO001011 里面买的具体是什么。",
+    "context": {},
+    "expected_intent": "order_query",
+    "expected_slots": {
+      "order_id": "ODEMO001011"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_order_query_02",
+    "query": "我可能没表达清楚，但是具体想问：订单 ODEMO001012 目前走到哪个处理状态了？",
+    "context": {},
+    "expected_intent": "order_query",
+    "expected_slots": {
+      "order_id": "ODEMO001012"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_order_query_03",
+    "query": "我担心理解有偏差，不过请按这个问题判断：我想核实订单 ODEMO001013 有没有付款成功。",
+    "context": {},
+    "expected_intent": "order_query",
+    "expected_slots": {
+      "order_id": "ODEMO001013"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_order_query_04",
+    "query": "我换个说法，不过我真正想确认的是：订单 ODEMO001014 上面记录的商品和数量是什么？",
+    "context": {},
+    "expected_intent": "order_query",
+    "expected_slots": {
+      "order_id": "ODEMO001014"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_order_query_05",
+    "query": "前面的背景先放一边，不过我这次想问：能不能查一下 ODEMO001015 这笔交易的详情？",
+    "context": {},
+    "expected_intent": "order_query",
+    "expected_slots": {
+      "order_id": "ODEMO001015"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_order_query_06",
+    "query": "我刚才说得有点绕，但是核心问题是：我刚找到订单号 ODEMO001016，想确认它当前状态。",
+    "context": {},
+    "expected_intent": "order_query",
+    "expected_slots": {
+      "order_id": "ODEMO001016"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_order_query_07",
+    "query": "我不是在问其他事情，而是想确认：订单 ODEMO001017 的商品信息能再给我看一下吗？",
+    "context": {},
+    "expected_intent": "order_query",
+    "expected_slots": {
+      "order_id": "ODEMO001017"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_order_query_08",
+    "query": "我原先以为情况不同，不过现在要问：请帮忙核对 ODEMO001018 这笔订单是否已生效。",
+    "context": {},
+    "expected_intent": "order_query",
+    "expected_slots": {
+      "order_id": "ODEMO001018"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_order_query_09",
+    "query": "我重新描述一下，但是诉求还是：我想知道 ODEMO001019 订单记录了哪些商品。",
+    "context": {},
+    "expected_intent": "order_query",
+    "expected_slots": {
+      "order_id": "ODEMO001019"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_order_query_10",
+    "query": "为了避免理解错，我再说清楚，不过我想问：这个订单付款成功了吗？",
+    "context": {
+      "intent": "order_query",
+      "order_id": "ODEMO001020"
+    },
+    "expected_intent": "order_query",
+    "expected_slots": {
+      "order_id": "ODEMO001020"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_logistics_query_01",
+    "query": "我之前以为这事很简单，不过现在想确认：订单 ODEMO001021 的包裹现在走到哪里了？",
+    "context": {},
+    "expected_intent": "logistics_query",
+    "expected_slots": {
+      "order_id": "ODEMO001021"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_logistics_query_02",
+    "query": "我可能没表达清楚，但是具体想问：帮我查查 ODEMO001022 最近一条配送轨迹。",
+    "context": {},
+    "expected_intent": "logistics_query",
+    "expected_slots": {
+      "order_id": "ODEMO001022"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_logistics_query_03",
+    "query": "我担心理解有偏差，不过请按这个问题判断：这笔 ODEMO001023 大概还要经过哪些物流节点？",
+    "context": {},
+    "expected_intent": "logistics_query",
+    "expected_slots": {
+      "order_id": "ODEMO001023"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_logistics_query_04",
+    "query": "我换个说法，不过我真正想确认的是：订单 ODEMO001024 的快递目前到哪个城市了？",
+    "context": {},
+    "expected_intent": "logistics_query",
+    "expected_slots": {
+      "order_id": "ODEMO001024"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_logistics_query_05",
+    "query": "前面的背景先放一边，不过我这次想问：想确认 ODEMO001025 是不是已经交给承运方。",
+    "context": {},
+    "expected_intent": "logistics_query",
+    "expected_slots": {
+      "order_id": "ODEMO001025"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_logistics_query_06",
+    "query": "我刚才说得有点绕，但是核心问题是：O DEMO001026 这单什么时候能看到下一条运输记录？",
+    "context": {},
+    "expected_intent": "logistics_query",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_logistics_query_07",
+    "query": "我不是在问其他事情，而是想确认：请查下 ODEMO001027 现在处于运输的哪个阶段。",
+    "context": {},
+    "expected_intent": "logistics_query",
+    "expected_slots": {
+      "order_id": "ODEMO001027"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_logistics_query_08",
+    "query": "我原先以为情况不同，不过现在要问：订单 ODEMO001028 的包裹有签收记录了吗？",
+    "context": {},
+    "expected_intent": "logistics_query",
+    "expected_slots": {
+      "order_id": "ODEMO001028"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_logistics_query_09",
+    "query": "我重新描述一下，但是诉求还是：能帮我看看 ODEMO001029 的配送进度吗？",
+    "context": {},
+    "expected_intent": "logistics_query",
+    "expected_slots": {
+      "order_id": "ODEMO001029"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_logistics_query_10",
+    "query": "为了避免理解错，我再说清楚，不过我想问：这笔包裹现在到哪里了？",
+    "context": {
+      "intent": "logistics_query",
+      "order_id": "ODEMO001030"
+    },
+    "expected_intent": "logistics_query",
+    "expected_slots": {
+      "order_id": "ODEMO001030"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sales_01",
+    "query": "我之前以为这事很简单，不过现在想确认：订单 ODEMO001031 还在可以申请退货的期限里吗？",
+    "context": {},
+    "expected_intent": "after_sales",
+    "expected_slots": {
+      "order_id": "ODEMO001031"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sales_02",
+    "query": "我可能没表达清楚，但是具体想问：定制商品如果已经开始制作，还能不能走无理由退货？",
+    "context": {},
+    "expected_intent": "after_sales",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sales_03",
+    "query": "我担心理解有偏差，不过请按这个问题判断：我想确认一下签收之后多久内能提交售后。",
+    "context": {},
+    "expected_intent": "after_sales",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sales_04",
+    "query": "我换个说法，不过我真正想确认的是：订单 ODEMO001032 已签收，申请退货通常需要满足哪些条件？",
+    "context": {},
+    "expected_intent": "after_sales",
+    "expected_slots": {
+      "order_id": "ODEMO001032"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sales_05",
+    "query": "前面的背景先放一边，不过我这次想问：如果商品包装拆开了，是否还符合退货政策？",
+    "context": {},
+    "expected_intent": "after_sales",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sales_06",
+    "query": "我刚才说得有点绕，但是核心问题是：不同商品类别的七天退货条件一样吗？",
+    "context": {},
+    "expected_intent": "after_sales",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sales_07",
+    "query": "我不是在问其他事情，而是想确认：商品有质量问题时，售后申请需要准备什么？",
+    "context": {},
+    "expected_intent": "after_sales",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sales_08",
+    "query": "我原先以为情况不同，不过现在要问：我想了解退款一般按什么流程处理。",
+    "context": {},
+    "expected_intent": "after_sales",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sales_09",
+    "query": "我重新描述一下，但是诉求还是：订单 ODEMO001033 是定制商品，能否申请售后需要看什么条件？",
+    "context": {},
+    "expected_intent": "after_sales",
+    "expected_slots": {
+      "order_id": "ODEMO001033"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sales_10",
+    "query": "为了避免理解错，我再说清楚，不过我想问：我想核实这笔订单还能不能退。",
+    "context": {
+      "intent": "after_sales",
+      "order_id": "ODEMO001033"
+    },
+    "expected_intent": "after_sales",
+    "expected_slots": {
+      "order_id": "ODEMO001033"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_cancel_order_01",
+    "query": "我之前以为这事很简单，不过现在想确认：请帮我发起取消订单 ODEMO001041。",
+    "context": {},
+    "expected_intent": "cancel_order",
+    "expected_slots": {
+      "order_id": "ODEMO001041"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_cancel_order_02",
+    "query": "我可能没表达清楚，但是具体想问：我决定取消 ODEMO001042 这笔订单，麻烦生成确认操作。",
+    "context": {},
+    "expected_intent": "cancel_order",
+    "expected_slots": {
+      "order_id": "ODEMO001042"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_cancel_order_03",
+    "query": "我担心理解有偏差，不过请按这个问题判断：订单 ODEMO001043 我不打算要了，能帮我提交取消吗？",
+    "context": {},
+    "expected_intent": "cancel_order",
+    "expected_slots": {
+      "order_id": "ODEMO001043"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_cancel_order_04",
+    "query": "我换个说法，不过我真正想确认的是：帮我把 ODEMO001044 订单取消掉，先让我确认。",
+    "context": {},
+    "expected_intent": "cancel_order",
+    "expected_slots": {
+      "order_id": "ODEMO001044"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_cancel_order_05",
+    "query": "前面的背景先放一边，不过我这次想问：我确定要取消订单 ODEMO001045，请准备好操作确认。",
+    "context": {},
+    "expected_intent": "cancel_order",
+    "expected_slots": {
+      "order_id": "ODEMO001045"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_cancel_order_06",
+    "query": "我刚才说得有点绕，但是核心问题是：这笔 ODEMO001046 不需要了，帮我申请取消订单。",
+    "context": {},
+    "expected_intent": "cancel_order",
+    "expected_slots": {
+      "order_id": "ODEMO001046"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_cancel_order_07",
+    "query": "我不是在问其他事情，而是想确认：麻烦处理一下 ODEMO001047 的取消请求。",
+    "context": {},
+    "expected_intent": "cancel_order",
+    "expected_slots": {
+      "order_id": "ODEMO001047"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_cancel_order_08",
+    "query": "我原先以为情况不同，不过现在要问：我想取消 ODEMO001048，提交前请给我确认步骤。",
+    "context": {},
+    "expected_intent": "cancel_order",
+    "expected_slots": {
+      "order_id": "ODEMO001048"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_cancel_order_09",
+    "query": "我重新描述一下，但是诉求还是：订单 ODEMO001049 买错了，请协助发起取消。",
+    "context": {},
+    "expected_intent": "cancel_order",
+    "expected_slots": {
+      "order_id": "ODEMO001049"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_cancel_order_10",
+    "query": "为了避免理解错，我再说清楚，不过我想问：现在帮我取消这笔吧。",
+    "context": {
+      "intent": "cancel_order",
+      "order_id": "ODEMO001050"
+    },
+    "expected_intent": "cancel_order",
+    "expected_slots": {
+      "order_id": "ODEMO001050"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_create_after_sale_01",
+    "query": "我之前以为这事很简单，不过现在想确认：帮我为订单 ODEMO001051 提交退货申请。",
+    "context": {},
+    "expected_intent": "create_after_sale",
+    "expected_slots": {
+      "order_id": "ODEMO001051"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_create_after_sale_02",
+    "query": "我可能没表达清楚，但是具体想问：我决定退掉 ODEMO001052 这件商品，请发起售后。",
+    "context": {},
+    "expected_intent": "create_after_sale",
+    "expected_slots": {
+      "order_id": "ODEMO001052"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_create_after_sale_03",
+    "query": "我担心理解有偏差，不过请按这个问题判断：订单 ODEMO001053 想办理退款，麻烦先检查资格再准备申请。",
+    "context": {},
+    "expected_intent": "create_after_sale",
+    "expected_slots": {
+      "order_id": "ODEMO001053"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_create_after_sale_04",
+    "query": "我换个说法，不过我真正想确认的是：请给 ODEMO001054 创建一个退货售后申请。",
+    "context": {},
+    "expected_intent": "create_after_sale",
+    "expected_slots": {
+      "order_id": "ODEMO001054"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_create_after_sale_05",
+    "query": "前面的背景先放一边，不过我这次想问：我想正式申请退货，关联订单 ODEMO001055。",
+    "context": {},
+    "expected_intent": "create_after_sale",
+    "expected_slots": {
+      "order_id": "ODEMO001055"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_create_after_sale_06",
+    "query": "我刚才说得有点绕，但是核心问题是：帮我提交 ODEMO001056 的售后申请。",
+    "context": {},
+    "expected_intent": "create_after_sale",
+    "expected_slots": {
+      "order_id": "ODEMO001056"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_create_after_sale_07",
+    "query": "我不是在问其他事情，而是想确认：我确认要退订单 ODEMO001057，请开始申请流程。",
+    "context": {},
+    "expected_intent": "create_after_sale",
+    "expected_slots": {
+      "order_id": "ODEMO001057"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_create_after_sale_08",
+    "query": "我原先以为情况不同，不过现在要问：请协助我为 ODEMO001058 发起退货处理。",
+    "context": {},
+    "expected_intent": "create_after_sale",
+    "expected_slots": {
+      "order_id": "ODEMO001058"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_create_after_sale_09",
+    "query": "我重新描述一下，但是诉求还是：这笔 ODEMO001059 我想申请退款，先帮我核验是否能办。",
+    "context": {},
+    "expected_intent": "create_after_sale",
+    "expected_slots": {
+      "order_id": "ODEMO001059"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_create_after_sale_10",
+    "query": "为了避免理解错，我再说清楚，不过我想问：现在帮我把这个申请提交上去。",
+    "context": {
+      "intent": "create_after_sale",
+      "order_id": "ODEMO001060"
+    },
+    "expected_intent": "create_after_sale",
+    "expected_slots": {
+      "order_id": "ODEMO001060"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sale_query_01",
+    "query": "我之前以为这事很简单，不过现在想确认：售后单 ASDEMO001001 当前审核到哪一步了？",
+    "context": {},
+    "expected_intent": "after_sale_query",
+    "expected_slots": {
+      "after_sale_id": "ASDEMO001001"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sale_query_02",
+    "query": "我可能没表达清楚，但是具体想问：帮我查一下 ASDEMO001002 的处理进度。",
+    "context": {},
+    "expected_intent": "after_sale_query",
+    "expected_slots": {
+      "after_sale_id": "ASDEMO001002"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sale_query_03",
+    "query": "我担心理解有偏差，不过请按这个问题判断：退货申请 ASDEMO001003 有审核结论了吗？",
+    "context": {},
+    "expected_intent": "after_sale_query",
+    "expected_slots": {
+      "after_sale_id": "ASDEMO001003"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sale_query_04",
+    "query": "我换个说法，不过我真正想确认的是：订单 ODEMO001061 的售后申请现在是什么状态？",
+    "context": {},
+    "expected_intent": "after_sale_query",
+    "expected_slots": {
+      "order_id": "ODEMO001061"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sale_query_05",
+    "query": "前面的背景先放一边，不过我这次想问：退款申请 ASDEMO001004 已经处理完成了吗？",
+    "context": {},
+    "expected_intent": "after_sale_query",
+    "expected_slots": {
+      "after_sale_id": "ASDEMO001004"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sale_query_06",
+    "query": "我刚才说得有点绕，但是核心问题是：售后单 ASDEMO001005 目前有没有新的进展？",
+    "context": {},
+    "expected_intent": "after_sale_query",
+    "expected_slots": {
+      "after_sale_id": "ASDEMO001005"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sale_query_07",
+    "query": "我不是在问其他事情，而是想确认：我之前提交的 ASDEMO001006 结果出来没有？",
+    "context": {},
+    "expected_intent": "after_sale_query",
+    "expected_slots": {
+      "after_sale_id": "ASDEMO001006"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sale_query_08",
+    "query": "我原先以为情况不同，不过现在要问：订单 ODEMO001062 的退款进度能帮我看一下吗？",
+    "context": {},
+    "expected_intent": "after_sale_query",
+    "expected_slots": {
+      "order_id": "ODEMO001062"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sale_query_09",
+    "query": "我重新描述一下，但是诉求还是：ASDEMO001007 这笔申请现在卡在哪个环节？",
+    "context": {},
+    "expected_intent": "after_sale_query",
+    "expected_slots": {
+      "after_sale_id": "ASDEMO001007"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_after_sale_query_10",
+    "query": "为了避免理解错，我再说清楚，不过我想问：我之前那个申请处理完了吗？",
+    "context": {
+      "intent": "after_sale_query",
+      "order_id": "ODEMO001063",
+      "after_sale_id": "ASDEMO001007"
+    },
+    "expected_intent": "after_sale_query",
+    "expected_slots": {
+      "order_id": "ODEMO001063",
+      "after_sale_id": "ASDEMO001007"
+    },
+    "expected_source": "model"
+  },
+  {
+    "id": "model_handoff_01",
+    "query": "我之前以为这事很简单，不过现在想确认：这个情况我自己处理不了，帮我转接人工客服。",
+    "context": {},
+    "expected_intent": "handoff",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_handoff_02",
+    "query": "我可能没表达清楚，但是具体想问：请安排一位真人客服继续跟进。",
+    "context": {},
+    "expected_intent": "handoff",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_handoff_03",
+    "query": "我担心理解有偏差，不过请按这个问题判断：我希望让售后专员联系我处理这个问题。",
+    "context": {},
+    "expected_intent": "handoff",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_handoff_04",
+    "query": "我换个说法，不过我真正想确认的是：能不能把对话升级给人工支持？",
+    "context": {},
+    "expected_intent": "handoff",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_handoff_05",
+    "query": "前面的背景先放一边，不过我这次想问：这个赔偿问题需要客服专员核实，请转人工。",
+    "context": {},
+    "expected_intent": "handoff",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_handoff_06",
+    "query": "我刚才说得有点绕，但是核心问题是：我已经尝试了几次还是不行，帮我找真人处理。",
+    "context": {},
+    "expected_intent": "handoff",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_handoff_07",
+    "query": "我不是在问其他事情，而是想确认：请帮忙创建一个人工客服工单。",
+    "context": {},
+    "expected_intent": "handoff",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_handoff_08",
+    "query": "我原先以为情况不同，不过现在要问：商品质量问题需要人工判断，请转给售后人员。",
+    "context": {},
+    "expected_intent": "handoff",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_handoff_09",
+    "query": "我重新描述一下，但是诉求还是：我不想继续自助操作了，麻烦接入人工。",
+    "context": {},
+    "expected_intent": "handoff",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_handoff_10",
+    "query": "为了避免理解错，我再说清楚，不过我想问：请把这件事交给人工客服跟进。",
+    "context": {},
+    "expected_intent": "handoff",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_other_01",
+    "query": "我之前以为这事很简单，不过现在想确认：我还没决定是取消还是退货，先告诉我需要哪些信息。",
+    "context": {},
+    "expected_intent": "other",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_other_02",
+    "query": "我可能没表达清楚，但是具体想问：先查一下物流，然后再讨论要不要取消订单。",
+    "context": {},
+    "expected_intent": "other",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_other_03",
+    "query": "我担心理解有偏差，不过请按这个问题判断：我想问两个不相关的问题，先帮我想想该从哪里开始。",
+    "context": {},
+    "expected_intent": "other",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_other_04",
+    "query": "我换个说法，不过我真正想确认的是：不要替我执行任何操作，我还在比较几个处理方案。",
+    "context": {},
+    "expected_intent": "other",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_other_05",
+    "query": "前面的背景先放一边，不过我这次想问：订单、商品和售后我都想问，但现在还没说清楚具体问题。",
+    "context": {},
+    "expected_intent": "other",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_other_06",
+    "query": "我刚才说得有点绕，但是核心问题是：先不要提交申请，我只是想整理一下自己的想法。",
+    "context": {},
+    "expected_intent": "other",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_other_07",
+    "query": "我不是在问其他事情，而是想确认：我同时想查物流和问发票，应该先提供什么？",
+    "context": {},
+    "expected_intent": "other",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_other_08",
+    "query": "我原先以为情况不同，不过现在要问：这段话里有多个诉求，请先告诉我应该拆成哪几件事。",
+    "context": {},
+    "expected_intent": "other",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_other_09",
+    "query": "我重新描述一下，但是诉求还是：我不确定自己要查询还是办理，先问我一个澄清问题。",
+    "context": {},
+    "expected_intent": "other",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "model_other_10",
+    "query": "为了避免理解错，我再说清楚，不过我想问：暂时没有明确问题，只是在了解客服能做什么。",
+    "context": {},
+    "expected_intent": "other",
+    "expected_slots": {},
+    "expected_source": "model"
+  },
+  {
+    "id": "modelhard_product_consult_01",
+    "query": "我准备给通勤用，P100戴一整天耳朵会不会难受？",
+    "context": {},
+    "expected_intent": "product_consult",
+    "expected_slots": {
+      "product_id": "P100"
+    },
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_product_consult_02",
+    "query": "想比较下P101在嘈杂咖啡店里能不能把背景声压住。",
+    "context": {},
+    "expected_intent": "product_consult",
+    "expected_slots": {
+      "product_id": "P101"
+    },
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_product_consult_03",
+    "query": "P102如果不开灯，满电能撑过一个晚上吗？",
+    "context": {},
+    "expected_intent": "product_consult",
+    "expected_slots": {
+      "product_id": "P102"
+    },
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_product_consult_04",
+    "query": "手头这款P103能给手机补几次电，实际大概是什么水平？",
+    "context": {},
+    "expected_intent": "product_consult",
+    "expected_slots": {
+      "product_id": "P103"
+    },
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_product_consult_05",
+    "query": "电脑没有蓝牙的话，P104还能连上用吗？",
+    "context": {},
+    "expected_intent": "product_consult",
+    "expected_slots": {
+      "product_id": "P104"
+    },
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_rule_query_01",
+    "query": "购物车里放了几件P100，优惠怎么凑比较合适？",
+    "context": {},
+    "expected_intent": "rule_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_rule_query_02",
+    "query": "如果寄到比较远的西北地区，P200的邮费怎么计算？",
+    "context": {},
+    "expected_intent": "rule_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_rule_query_03",
+    "query": "付款成功之后通常要等多久才会出库？",
+    "context": {},
+    "expected_intent": "rule_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_rule_query_04",
+    "query": "我想开票，需要满足什么条件？",
+    "context": {},
+    "expected_intent": "rule_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_rule_query_05",
+    "query": "快递好几天没刷新，这种情况一般怎么处理？",
+    "context": {},
+    "expected_intent": "rule_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_order_query_01",
+    "query": "想确认下前两天那笔消费现在走到哪个状态了。",
+    "context": {},
+    "expected_intent": "order_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_order_query_02",
+    "query": "我名下最近有哪些购买记录？",
+    "context": {},
+    "expected_intent": "order_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_order_query_03",
+    "query": "麻烦核对一下这个单子是不是已经付款了。",
+    "context": {},
+    "expected_intent": "order_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_order_query_04",
+    "query": "刚刚下的那单还在系统里吗？",
+    "context": {},
+    "expected_intent": "order_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_order_query_05",
+    "query": "能不能把我最近的订单简单列一下？",
+    "context": {},
+    "expected_intent": "order_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_logistics_query_01",
+    "query": "下单后我一直没收到动静，包裹现在有更新吗？",
+    "context": {},
+    "expected_intent": "logistics_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_logistics_query_02",
+    "query": "快递离我还有多远，能看最新轨迹吗？",
+    "context": {},
+    "expected_intent": "logistics_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_logistics_query_03",
+    "query": "那件已经寄出的东西到哪个环节了？",
+    "context": {},
+    "expected_intent": "logistics_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_logistics_query_04",
+    "query": "签收状态有了吗，家里人说还没看到包裹。",
+    "context": {},
+    "expected_intent": "logistics_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_logistics_query_05",
+    "query": "物流页面两天没变化，帮我确认是不是卡住了。",
+    "context": {},
+    "expected_intent": "logistics_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_after_sales_01",
+    "query": "东西到手试了下不太合适，现在申请退掉还来得及吗？",
+    "context": {},
+    "expected_intent": "after_sales",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_after_sales_02",
+    "query": "签收有一阵子了，我想知道还能不能走退货流程。",
+    "context": {},
+    "expected_intent": "after_sales",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_after_sales_03",
+    "query": "如果包装拆开了，这种情况还可以申请售后吗？",
+    "context": {},
+    "expected_intent": "after_sales",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_after_sales_04",
+    "query": "这件定制的东西有点问题，政策上能退吗？",
+    "context": {},
+    "expected_intent": "after_sales",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_after_sales_05",
+    "query": "我还没收到货，不过已经不想要了，能不能退款？",
+    "context": {},
+    "expected_intent": "after_sales",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_cancel_order_01",
+    "query": "刚下单手滑买错了，趁还没寄出能帮我撤掉吗？",
+    "context": {},
+    "expected_intent": "cancel_order",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_cancel_order_02",
+    "query": "这笔交易我不想要了，能不能现在停止发货？",
+    "context": {},
+    "expected_intent": "cancel_order",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_cancel_order_03",
+    "query": "买重了一份，想撤销其中刚付款的那单。",
+    "context": {},
+    "expected_intent": "cancel_order",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_cancel_order_04",
+    "query": "如果订单已经交给快递，是不是就不能直接取消了？",
+    "context": {},
+    "expected_intent": "cancel_order",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_cancel_order_05",
+    "query": "帮我终止这次购买，先告诉我能不能办。",
+    "context": {},
+    "expected_intent": "cancel_order",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_create_after_sale_01",
+    "query": "东西坏了，我想正式提交售后申请，下一步怎么走？",
+    "context": {},
+    "expected_intent": "create_after_sale",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_create_after_sale_02",
+    "query": "麻烦帮我发起退货退款，原因是尺寸不合适。",
+    "context": {},
+    "expected_intent": "create_after_sale",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_create_after_sale_03",
+    "query": "收到的商品有瑕疵，想走换货流程。",
+    "context": {},
+    "expected_intent": "create_after_sale",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_create_after_sale_04",
+    "query": "这次购买想申请退款，先帮我准备申请。",
+    "context": {},
+    "expected_intent": "create_after_sale",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_create_after_sale_05",
+    "query": "包装和商品都还在，我想提交退货申请。",
+    "context": {},
+    "expected_intent": "create_after_sale",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_after_sale_query_01",
+    "query": "之前报修的事情有回复了吗？",
+    "context": {},
+    "expected_intent": "after_sale_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_after_sale_query_02",
+    "query": "退款那边现在审核到哪一步了？",
+    "context": {},
+    "expected_intent": "after_sale_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_after_sale_query_03",
+    "query": "我提交的退货申请是不是已经有人处理？",
+    "context": {},
+    "expected_intent": "after_sale_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_after_sale_query_04",
+    "query": "售后申请迟迟没消息，能帮我查查进度吗？",
+    "context": {},
+    "expected_intent": "after_sale_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_after_sale_query_05",
+    "query": "上次发起的换货有结果了吗？",
+    "context": {},
+    "expected_intent": "after_sale_query",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_handoff_01",
+    "query": "这个问题来回沟通没解决，我希望真人客服接手。",
+    "context": {},
+    "expected_intent": "handoff",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_handoff_02",
+    "query": "能不能安排人工跟我确认一下特殊情况？",
+    "context": {},
+    "expected_intent": "handoff",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_handoff_03",
+    "query": "我需要找一位客服代表继续处理。",
+    "context": {},
+    "expected_intent": "handoff",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_handoff_04",
+    "query": "机器回答不了这个问题，请把会话转给工作人员。",
+    "context": {},
+    "expected_intent": "handoff",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_handoff_05",
+    "query": "麻烦升级给人工专员处理。",
+    "context": {},
+    "expected_intent": "handoff",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_other_01",
+    "query": "我先描述下背景，暂时还没想好具体要办什么。",
+    "context": {},
+    "expected_intent": "other",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_other_02",
+    "query": "如果同时有两个问题，应该怎么分别提供信息？",
+    "context": {},
+    "expected_intent": "other",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_other_03",
+    "query": "我只是想知道这个客服能做哪些事情，不用查询订单。",
+    "context": {},
+    "expected_intent": "other",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_other_04",
+    "query": "先等等，我还在整理要问的内容。",
+    "context": {},
+    "expected_intent": "other",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  },
+  {
+    "id": "modelhard_other_05",
+    "query": "这个表达可能有歧义，你先告诉我需要补充什么。",
+    "context": {},
+    "expected_intent": "other",
+    "expected_slots": {},
+    "expected_source": "model",
+    "eval_tags": [
+      "intent",
+      "model_required",
+      "rule_hard",
+      "latency"
+    ]
+  }
+]

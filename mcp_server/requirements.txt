@@ -1,0 +1,9 @@
+fastmcp
+httpx
+pydantic
+sqlalchemy
+pymysql
+pdfplumber
+qdrant-client
+langchain-text-splitters
+numpy

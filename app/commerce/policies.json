@@ -1,0 +1,14 @@
+[
+  {
+    "version": "RETURN-DEMO-v1",
+    "title": "演示店铺无理由退货申请规则",
+    "merchant_id": "demo",
+    "channel": "web",
+    "effective_from": "2026-01-01T00:00:00+00:00",
+    "categories": ["electronics", "clothing", "custom"],
+    "days": 7,
+    "conflict": false,
+    "source": "merchant://demo/policies/RETURN-DEMO-v1",
+    "text": "演示店铺规则：普通非定制商品签收后 7×24 小时内可提交无理由退货申请，需后续核实商品完好情况。提交申请不代表退款成功。定制商品、质量争议及超期诉求转人工处理。本规则是项目演示数据，不代表所有商品的法定售后权利。"
+  }
+]

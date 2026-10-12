@@ -1,0 +1,11 @@
+D:\ChunZhao\Agent - ����\.venv\Lib\site-packages\langgraph\cache\base\__init__.py:8: LangChainPendingDeprecationWarning: The default value of `allowed_objects` will change in a future version. Pass an explicit value (e.g., allowed_objects='messages' or allowed_objects='core') to suppress this warning.
+  from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
+2026-10-08 14:35:49,666 WARNING app.commerce.intent Semantic intent recognition failed (TimeoutError); requesting clarification
+2026-10-08 14:36:05,997 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 14:36:18,443 WARNING app.commerce.intent Semantic intent recognition failed (TimeoutError); requesting clarification
+2026-10-08 14:36:31,778 WARNING app.commerce.intent Semantic intent recognition failed (TimeoutError); requesting clarification
+2026-10-08 14:36:44,372 WARNING app.commerce.intent Semantic intent recognition failed (TimeoutError); requesting clarification
+2026-10-08 14:36:56,895 WARNING app.commerce.intent Semantic intent recognition failed (TimeoutError); requesting clarification
+2026-10-08 14:37:09,364 WARNING app.commerce.intent Semantic intent recognition failed (TimeoutError); requesting clarification
+2026-10-08 14:37:23,308 WARNING app.commerce.intent Semantic intent recognition failed (TimeoutError); requesting clarification
+2026-10-08 14:37:35,988 WARNING app.commerce.intent Semantic intent recognition failed (TimeoutError); requesting clarification

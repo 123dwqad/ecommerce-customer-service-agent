@@ -1,0 +1,1742 @@
+{
+  "generated_at": "2026-10-09T07:23:13.822504+00:00",
+  "mode": "model_focused_intent_only",
+  "dataset": "eval/commerce/intent_model_focused.json",
+  "summary": {
+    "total_cases": 100,
+    "intent_accuracy_e2e": 0.91,
+    "intent_accuracy_when_model_returned": 0.9286,
+    "model_attempted": 100,
+    "model_returned": 98,
+    "model_success_rate": 0.98,
+    "expected_model_source_rate": 0.98,
+    "slot_parameter_accuracy": 0.9551,
+    "slot_parameter_points": 89,
+    "source_counts": {
+      "model": 98,
+      "model_fallback": 2
+    },
+    "average_latency_ms": 1097.4,
+    "p95_latency_ms": 1352.06
+  },
+  "results": [
+    {
+      "id": "model_product_consult_01",
+      "expected_intent": "product_consult",
+      "actual_intent": "product_consult",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "product_id": {
+          "expected": "P100",
+          "actual": "P100",
+          "correct": true
+        }
+      },
+      "latency_ms": 7089.61
+    },
+    {
+      "id": "model_product_consult_02",
+      "expected_intent": "product_consult",
+      "actual_intent": "product_consult",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "product_id": {
+          "expected": "P101",
+          "actual": "P101",
+          "correct": true
+        }
+      },
+      "latency_ms": 981.68
+    },
+    {
+      "id": "model_product_consult_03",
+      "expected_intent": "product_consult",
+      "actual_intent": "product_consult",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "product_id": {
+          "expected": "P102",
+          "actual": "P102",
+          "correct": true
+        }
+      },
+      "latency_ms": 959.27
+    },
+    {
+      "id": "model_product_consult_04",
+      "expected_intent": "product_consult",
+      "actual_intent": "product_consult",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "product_id": {
+          "expected": "P103",
+          "actual": "P103",
+          "correct": true
+        }
+      },
+      "latency_ms": 1004.97
+    },
+    {
+      "id": "model_product_consult_05",
+      "expected_intent": "product_consult",
+      "actual_intent": "product_consult",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "product_id": {
+          "expected": "P104",
+          "actual": "P104",
+          "correct": true
+        }
+      },
+      "latency_ms": 949.89
+    },
+    {
+      "id": "model_product_consult_06",
+      "expected_intent": "product_consult",
+      "actual_intent": "product_consult",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "product_id": {
+          "expected": "P105",
+          "actual": "P105",
+          "correct": true
+        }
+      },
+      "latency_ms": 987.19
+    },
+    {
+      "id": "model_product_consult_07",
+      "expected_intent": "product_consult",
+      "actual_intent": "product_consult",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "product_id": {
+          "expected": "P106",
+          "actual": "P106",
+          "correct": true
+        }
+      },
+      "latency_ms": 1049.55
+    },
+    {
+      "id": "model_product_consult_08",
+      "expected_intent": "product_consult",
+      "actual_intent": "product_consult",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "product_id": {
+          "expected": "P201",
+          "actual": "P201",
+          "correct": true
+        }
+      },
+      "latency_ms": 972.33
+    },
+    {
+      "id": "model_product_consult_09",
+      "expected_intent": "product_consult",
+      "actual_intent": "product_consult",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "product_id": {
+          "expected": "P203",
+          "actual": "P203",
+          "correct": true
+        }
+      },
+      "latency_ms": 1004.52
+    },
+    {
+      "id": "model_product_consult_10",
+      "expected_intent": "product_consult",
+      "actual_intent": "product_consult",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "product_id": {
+          "expected": "P304",
+          "actual": "P304",
+          "correct": true
+        }
+      },
+      "latency_ms": 966.38
+    },
+    {
+      "id": "model_rule_query_01",
+      "expected_intent": "rule_query",
+      "actual_intent": "product_consult",
+      "intent_correct": false,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "product_id": {
+          "expected": "P100",
+          "actual": "P100",
+          "correct": true
+        },
+        "quantity": {
+          "expected": 3,
+          "actual": null,
+          "correct": false
+        },
+        "rule_topic": {
+          "expected": "purchase",
+          "actual": null,
+          "correct": false
+        }
+      },
+      "latency_ms": 960.47
+    },
+    {
+      "id": "model_rule_query_02",
+      "expected_intent": "rule_query",
+      "actual_intent": "rule_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "product_id": {
+          "expected": "P100",
+          "actual": "P100",
+          "correct": true
+        },
+        "quantity": {
+          "expected": 5,
+          "actual": 5,
+          "correct": true
+        },
+        "rule_topic": {
+          "expected": "coupon",
+          "actual": "coupon",
+          "correct": true
+        }
+      },
+      "latency_ms": 1352.06
+    },
+    {
+      "id": "model_rule_query_03",
+      "expected_intent": "rule_query",
+      "actual_intent": "rule_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "product_id": {
+          "expected": "P100",
+          "actual": "P100",
+          "correct": true
+        },
+        "quantity": {
+          "expected": 2,
+          "actual": 2,
+          "correct": true
+        },
+        "region": {
+          "expected": "remote",
+          "actual": "remote",
+          "correct": true
+        },
+        "rule_topic": {
+          "expected": "shipping_fee",
+          "actual": "shipping_fee",
+          "correct": true
+        }
+      },
+      "latency_ms": 1583.74
+    },
+    {
+      "id": "model_rule_query_04",
+      "expected_intent": "rule_query",
+      "actual_intent": "rule_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001001",
+          "actual": "ODEMO001001",
+          "correct": true
+        },
+        "rule_topic": {
+          "expected": "dispatch",
+          "actual": "dispatch",
+          "correct": true
+        }
+      },
+      "latency_ms": 1216.84
+    },
+    {
+      "id": "model_rule_query_05",
+      "expected_intent": "rule_query",
+      "actual_intent": "rule_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001002",
+          "actual": "ODEMO001002",
+          "correct": true
+        },
+        "rule_topic": {
+          "expected": "address_change",
+          "actual": "address_change",
+          "correct": true
+        }
+      },
+      "latency_ms": 1169.74
+    },
+    {
+      "id": "model_rule_query_06",
+      "expected_intent": "rule_query",
+      "actual_intent": "rule_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001003",
+          "actual": "ODEMO001003",
+          "correct": true
+        },
+        "rule_topic": {
+          "expected": "invoice",
+          "actual": "invoice",
+          "correct": true
+        }
+      },
+      "latency_ms": 1253.59
+    },
+    {
+      "id": "model_rule_query_07",
+      "expected_intent": "rule_query",
+      "actual_intent": "rule_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001004",
+          "actual": "ODEMO001004",
+          "correct": true
+        },
+        "rule_topic": {
+          "expected": "price_protection",
+          "actual": "price_protection",
+          "correct": true
+        }
+      },
+      "latency_ms": 1274.75
+    },
+    {
+      "id": "model_rule_query_08",
+      "expected_intent": "rule_query",
+      "actual_intent": "rule_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001005",
+          "actual": "ODEMO001005",
+          "correct": true
+        },
+        "rule_topic": {
+          "expected": "logistics_delay",
+          "actual": "logistics_delay",
+          "correct": true
+        }
+      },
+      "latency_ms": 1262.59
+    },
+    {
+      "id": "model_rule_query_09",
+      "expected_intent": "rule_query",
+      "actual_intent": "rule_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001006",
+          "actual": "ODEMO001006",
+          "correct": true
+        },
+        "rule_topic": {
+          "expected": "cancellation",
+          "actual": "cancellation",
+          "correct": true
+        }
+      },
+      "latency_ms": 1167.29
+    },
+    {
+      "id": "model_rule_query_10",
+      "expected_intent": "rule_query",
+      "actual_intent": "rule_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "product_id": {
+          "expected": "P200",
+          "actual": "P200",
+          "correct": true
+        },
+        "quantity": {
+          "expected": 2,
+          "actual": 2,
+          "correct": true
+        },
+        "rule_topic": {
+          "expected": "coupon",
+          "actual": "purchase",
+          "correct": false
+        }
+      },
+      "latency_ms": 1440.62
+    },
+    {
+      "id": "model_order_query_01",
+      "expected_intent": "order_query",
+      "actual_intent": "order_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001011",
+          "actual": "ODEMO001011",
+          "correct": true
+        }
+      },
+      "latency_ms": 1052.04
+    },
+    {
+      "id": "model_order_query_02",
+      "expected_intent": "order_query",
+      "actual_intent": "order_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001012",
+          "actual": "ODEMO001012",
+          "correct": true
+        }
+      },
+      "latency_ms": 1249.8
+    },
+    {
+      "id": "model_order_query_03",
+      "expected_intent": "order_query",
+      "actual_intent": "order_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001013",
+          "actual": "ODEMO001013",
+          "correct": true
+        }
+      },
+      "latency_ms": 1041.62
+    },
+    {
+      "id": "model_order_query_04",
+      "expected_intent": "order_query",
+      "actual_intent": "order_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001014",
+          "actual": "ODEMO001014",
+          "correct": true
+        }
+      },
+      "latency_ms": 1045.43
+    },
+    {
+      "id": "model_order_query_05",
+      "expected_intent": "order_query",
+      "actual_intent": "order_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001015",
+          "actual": "ODEMO001015",
+          "correct": true
+        }
+      },
+      "latency_ms": 1053.77
+    },
+    {
+      "id": "model_order_query_06",
+      "expected_intent": "order_query",
+      "actual_intent": "order_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001016",
+          "actual": "ODEMO001016",
+          "correct": true
+        }
+      },
+      "latency_ms": 1194.44
+    },
+    {
+      "id": "model_order_query_07",
+      "expected_intent": "order_query",
+      "actual_intent": "product_consult",
+      "intent_correct": false,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001017",
+          "actual": "ODEMO001017",
+          "correct": true
+        }
+      },
+      "latency_ms": 1083.92
+    },
+    {
+      "id": "model_order_query_08",
+      "expected_intent": "order_query",
+      "actual_intent": "order_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001018",
+          "actual": "ODEMO001018",
+          "correct": true
+        }
+      },
+      "latency_ms": 988.59
+    },
+    {
+      "id": "model_order_query_09",
+      "expected_intent": "order_query",
+      "actual_intent": "order_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001019",
+          "actual": "ODEMO001019",
+          "correct": true
+        }
+      },
+      "latency_ms": 1015.71
+    },
+    {
+      "id": "model_order_query_10",
+      "expected_intent": "order_query",
+      "actual_intent": "order_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001020",
+          "actual": "ODEMO001020",
+          "correct": true
+        }
+      },
+      "latency_ms": 1022.82
+    },
+    {
+      "id": "model_logistics_query_01",
+      "expected_intent": "logistics_query",
+      "actual_intent": "logistics_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001021",
+          "actual": "ODEMO001021",
+          "correct": true
+        }
+      },
+      "latency_ms": 1333.71
+    },
+    {
+      "id": "model_logistics_query_02",
+      "expected_intent": "logistics_query",
+      "actual_intent": "logistics_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001022",
+          "actual": "ODEMO001022",
+          "correct": true
+        }
+      },
+      "latency_ms": 1126.8
+    },
+    {
+      "id": "model_logistics_query_03",
+      "expected_intent": "logistics_query",
+      "actual_intent": "logistics_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001023",
+          "actual": "ODEMO001023",
+          "correct": true
+        }
+      },
+      "latency_ms": 1923.33
+    },
+    {
+      "id": "model_logistics_query_04",
+      "expected_intent": "logistics_query",
+      "actual_intent": "logistics_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001024",
+          "actual": "ODEMO001024",
+          "correct": true
+        }
+      },
+      "latency_ms": 1047.92
+    },
+    {
+      "id": "model_logistics_query_05",
+      "expected_intent": "logistics_query",
+      "actual_intent": "logistics_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001025",
+          "actual": "ODEMO001025",
+          "correct": true
+        }
+      },
+      "latency_ms": 1014.74
+    },
+    {
+      "id": "model_logistics_query_06",
+      "expected_intent": "logistics_query",
+      "actual_intent": "other",
+      "intent_correct": false,
+      "expected_source": "model",
+      "actual_source": "model_fallback",
+      "source_correct": false,
+      "needs_clarification": true,
+      "slot_checks": {},
+      "latency_ms": 1235.53
+    },
+    {
+      "id": "model_logistics_query_07",
+      "expected_intent": "logistics_query",
+      "actual_intent": "logistics_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001027",
+          "actual": "ODEMO001027",
+          "correct": true
+        }
+      },
+      "latency_ms": 1083.0
+    },
+    {
+      "id": "model_logistics_query_08",
+      "expected_intent": "logistics_query",
+      "actual_intent": "logistics_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001028",
+          "actual": "ODEMO001028",
+          "correct": true
+        }
+      },
+      "latency_ms": 1276.61
+    },
+    {
+      "id": "model_logistics_query_09",
+      "expected_intent": "logistics_query",
+      "actual_intent": "logistics_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001029",
+          "actual": "ODEMO001029",
+          "correct": true
+        }
+      },
+      "latency_ms": 1056.79
+    },
+    {
+      "id": "model_logistics_query_10",
+      "expected_intent": "logistics_query",
+      "actual_intent": "logistics_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001030",
+          "actual": "ODEMO001030",
+          "correct": true
+        }
+      },
+      "latency_ms": 1118.86
+    },
+    {
+      "id": "model_after_sales_01",
+      "expected_intent": "after_sales",
+      "actual_intent": "after_sales",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001031",
+          "actual": "ODEMO001031",
+          "correct": true
+        }
+      },
+      "latency_ms": 1003.16
+    },
+    {
+      "id": "model_after_sales_02",
+      "expected_intent": "after_sales",
+      "actual_intent": "rule_query",
+      "intent_correct": false,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {},
+      "latency_ms": 922.11
+    },
+    {
+      "id": "model_after_sales_03",
+      "expected_intent": "after_sales",
+      "actual_intent": "create_after_sale",
+      "intent_correct": false,
+      "expected_source": "model",
+      "actual_source": "model_fallback",
+      "source_correct": false,
+      "needs_clarification": false,
+      "slot_checks": {},
+      "latency_ms": 907.19
+    },
+    {
+      "id": "model_after_sales_04",
+      "expected_intent": "after_sales",
+      "actual_intent": "after_sales",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001032",
+          "actual": "ODEMO001032",
+          "correct": true
+        }
+      },
+      "latency_ms": 1085.38
+    },
+    {
+      "id": "model_after_sales_05",
+      "expected_intent": "after_sales",
+      "actual_intent": "after_sales",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {},
+      "latency_ms": 758.54
+    },
+    {
+      "id": "model_after_sales_06",
+      "expected_intent": "after_sales",
+      "actual_intent": "rule_query",
+      "intent_correct": false,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {},
+      "latency_ms": 921.13
+    },
+    {
+      "id": "model_after_sales_07",
+      "expected_intent": "after_sales",
+      "actual_intent": "after_sales",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {},
+      "latency_ms": 788.59
+    },
+    {
+      "id": "model_after_sales_08",
+      "expected_intent": "after_sales",
+      "actual_intent": "rule_query",
+      "intent_correct": false,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {},
+      "latency_ms": 908.66
+    },
+    {
+      "id": "model_after_sales_09",
+      "expected_intent": "after_sales",
+      "actual_intent": "after_sales",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001033",
+          "actual": "ODEMO001033",
+          "correct": true
+        }
+      },
+      "latency_ms": 1033.24
+    },
+    {
+      "id": "model_after_sales_10",
+      "expected_intent": "after_sales",
+      "actual_intent": "after_sales",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001033",
+          "actual": "ODEMO001033",
+          "correct": true
+        }
+      },
+      "latency_ms": 1015.15
+    },
+    {
+      "id": "model_cancel_order_01",
+      "expected_intent": "cancel_order",
+      "actual_intent": "cancel_order",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001041",
+          "actual": "ODEMO001041",
+          "correct": true
+        }
+      },
+      "latency_ms": 1051.31
+    },
+    {
+      "id": "model_cancel_order_02",
+      "expected_intent": "cancel_order",
+      "actual_intent": "cancel_order",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001042",
+          "actual": "ODEMO001042",
+          "correct": true
+        }
+      },
+      "latency_ms": 1038.33
+    },
+    {
+      "id": "model_cancel_order_03",
+      "expected_intent": "cancel_order",
+      "actual_intent": "cancel_order",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001043",
+          "actual": "ODEMO001043",
+          "correct": true
+        }
+      },
+      "latency_ms": 1044.34
+    },
+    {
+      "id": "model_cancel_order_04",
+      "expected_intent": "cancel_order",
+      "actual_intent": "cancel_order",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001044",
+          "actual": "ODEMO001044",
+          "correct": true
+        }
+      },
+      "latency_ms": 1098.36
+    },
+    {
+      "id": "model_cancel_order_05",
+      "expected_intent": "cancel_order",
+      "actual_intent": "cancel_order",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001045",
+          "actual": "ODEMO001045",
+          "correct": true
+        }
+      },
+      "latency_ms": 1025.0
+    },
+    {
+      "id": "model_cancel_order_06",
+      "expected_intent": "cancel_order",
+      "actual_intent": "cancel_order",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001046",
+          "actual": "ODEMO001046",
+          "correct": true
+        }
+      },
+      "latency_ms": 1044.04
+    },
+    {
+      "id": "model_cancel_order_07",
+      "expected_intent": "cancel_order",
+      "actual_intent": "cancel_order",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001047",
+          "actual": "ODEMO001047",
+          "correct": true
+        }
+      },
+      "latency_ms": 1043.77
+    },
+    {
+      "id": "model_cancel_order_08",
+      "expected_intent": "cancel_order",
+      "actual_intent": "cancel_order",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001048",
+          "actual": "ODEMO001048",
+          "correct": true
+        }
+      },
+      "latency_ms": 1042.58
+    },
+    {
+      "id": "model_cancel_order_09",
+      "expected_intent": "cancel_order",
+      "actual_intent": "cancel_order",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001049",
+          "actual": "ODEMO001049",
+          "correct": true
+        }
+      },
+      "latency_ms": 1120.69
+    },
+    {
+      "id": "model_cancel_order_10",
+      "expected_intent": "cancel_order",
+      "actual_intent": "cancel_order",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001050",
+          "actual": "ODEMO001050",
+          "correct": true
+        }
+      },
+      "latency_ms": 1004.97
+    },
+    {
+      "id": "model_create_after_sale_01",
+      "expected_intent": "create_after_sale",
+      "actual_intent": "create_after_sale",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001051",
+          "actual": "ODEMO001051",
+          "correct": true
+        }
+      },
+      "latency_ms": 1014.61
+    },
+    {
+      "id": "model_create_after_sale_02",
+      "expected_intent": "create_after_sale",
+      "actual_intent": "create_after_sale",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001052",
+          "actual": "ODEMO001052",
+          "correct": true
+        }
+      },
+      "latency_ms": 1640.2
+    },
+    {
+      "id": "model_create_after_sale_03",
+      "expected_intent": "create_after_sale",
+      "actual_intent": "after_sales",
+      "intent_correct": false,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001053",
+          "actual": "ODEMO001053",
+          "correct": true
+        }
+      },
+      "latency_ms": 1043.35
+    },
+    {
+      "id": "model_create_after_sale_04",
+      "expected_intent": "create_after_sale",
+      "actual_intent": "create_after_sale",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001054",
+          "actual": "ODEMO001054",
+          "correct": true
+        }
+      },
+      "latency_ms": 1144.94
+    },
+    {
+      "id": "model_create_after_sale_05",
+      "expected_intent": "create_after_sale",
+      "actual_intent": "create_after_sale",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001055",
+          "actual": "ODEMO001055",
+          "correct": true
+        }
+      },
+      "latency_ms": 1158.01
+    },
+    {
+      "id": "model_create_after_sale_06",
+      "expected_intent": "create_after_sale",
+      "actual_intent": "create_after_sale",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001056",
+          "actual": "ODEMO001056",
+          "correct": true
+        }
+      },
+      "latency_ms": 1184.76
+    },
+    {
+      "id": "model_create_after_sale_07",
+      "expected_intent": "create_after_sale",
+      "actual_intent": "create_after_sale",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001057",
+          "actual": "ODEMO001057",
+          "correct": true
+        }
+      },
+      "latency_ms": 1068.92
+    },
+    {
+      "id": "model_create_after_sale_08",
+      "expected_intent": "create_after_sale",
+      "actual_intent": "create_after_sale",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001058",
+          "actual": "ODEMO001058",
+          "correct": true
+        }
+      },
+      "latency_ms": 1064.16
+    },
+    {
+      "id": "model_create_after_sale_09",
+      "expected_intent": "create_after_sale",
+      "actual_intent": "after_sales",
+      "intent_correct": false,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001059",
+          "actual": "ODEMO001059",
+          "correct": true
+        }
+      },
+      "latency_ms": 1022.84
+    },
+    {
+      "id": "model_create_after_sale_10",
+      "expected_intent": "create_after_sale",
+      "actual_intent": "create_after_sale",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001060",
+          "actual": "ODEMO001060",
+          "correct": true
+        }
+      },
+      "latency_ms": 1061.6
+    },
+    {
+      "id": "model_after_sale_query_01",
+      "expected_intent": "after_sale_query",
+      "actual_intent": "after_sale_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "after_sale_id": {
+          "expected": "ASDEMO001001",
+          "actual": "ASDEMO001001",
+          "correct": true
+        }
+      },
+      "latency_ms": 1038.86
+    },
+    {
+      "id": "model_after_sale_query_02",
+      "expected_intent": "after_sale_query",
+      "actual_intent": "after_sale_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "after_sale_id": {
+          "expected": "ASDEMO001002",
+          "actual": "ASDEMO001002",
+          "correct": true
+        }
+      },
+      "latency_ms": 1087.61
+    },
+    {
+      "id": "model_after_sale_query_03",
+      "expected_intent": "after_sale_query",
+      "actual_intent": "after_sale_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "after_sale_id": {
+          "expected": "ASDEMO001003",
+          "actual": "ASDEMO001003",
+          "correct": true
+        }
+      },
+      "latency_ms": 1088.94
+    },
+    {
+      "id": "model_after_sale_query_04",
+      "expected_intent": "after_sale_query",
+      "actual_intent": "after_sale_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001061",
+          "actual": "ODEMO001061",
+          "correct": true
+        }
+      },
+      "latency_ms": 1076.15
+    },
+    {
+      "id": "model_after_sale_query_05",
+      "expected_intent": "after_sale_query",
+      "actual_intent": "after_sale_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "after_sale_id": {
+          "expected": "ASDEMO001004",
+          "actual": "ASDEMO001004",
+          "correct": true
+        }
+      },
+      "latency_ms": 1289.71
+    },
+    {
+      "id": "model_after_sale_query_06",
+      "expected_intent": "after_sale_query",
+      "actual_intent": "after_sale_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "after_sale_id": {
+          "expected": "ASDEMO001005",
+          "actual": "ASDEMO001005",
+          "correct": true
+        }
+      },
+      "latency_ms": 1153.38
+    },
+    {
+      "id": "model_after_sale_query_07",
+      "expected_intent": "after_sale_query",
+      "actual_intent": "after_sale_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "after_sale_id": {
+          "expected": "ASDEMO001006",
+          "actual": "ASDEMO001006",
+          "correct": true
+        }
+      },
+      "latency_ms": 1073.96
+    },
+    {
+      "id": "model_after_sale_query_08",
+      "expected_intent": "after_sale_query",
+      "actual_intent": "after_sale_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001062",
+          "actual": "ODEMO001062",
+          "correct": true
+        }
+      },
+      "latency_ms": 1155.38
+    },
+    {
+      "id": "model_after_sale_query_09",
+      "expected_intent": "after_sale_query",
+      "actual_intent": "after_sale_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "after_sale_id": {
+          "expected": "ASDEMO001007",
+          "actual": "ASDEMO001007",
+          "correct": true
+        }
+      },
+      "latency_ms": 1109.79
+    },
+    {
+      "id": "model_after_sale_query_10",
+      "expected_intent": "after_sale_query",
+      "actual_intent": "after_sale_query",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {
+        "order_id": {
+          "expected": "ODEMO001063",
+          "actual": null,
+          "correct": false
+        },
+        "after_sale_id": {
+          "expected": "ASDEMO001007",
+          "actual": "ASDEMO001007",
+          "correct": true
+        }
+      },
+      "latency_ms": 1109.7
+    },
+    {
+      "id": "model_handoff_01",
+      "expected_intent": "handoff",
+      "actual_intent": "handoff",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {},
+      "latency_ms": 696.54
+    },
+    {
+      "id": "model_handoff_02",
+      "expected_intent": "handoff",
+      "actual_intent": "handoff",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {},
+      "latency_ms": 721.04
+    },
+    {
+      "id": "model_handoff_03",
+      "expected_intent": "handoff",
+      "actual_intent": "handoff",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {},
+      "latency_ms": 777.3
+    },
+    {
+      "id": "model_handoff_04",
+      "expected_intent": "handoff",
+      "actual_intent": "handoff",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {},
+      "latency_ms": 770.53
+    },
+    {
+      "id": "model_handoff_05",
+      "expected_intent": "handoff",
+      "actual_intent": "handoff",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {},
+      "latency_ms": 814.24
+    },
+    {
+      "id": "model_handoff_06",
+      "expected_intent": "handoff",
+      "actual_intent": "handoff",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {},
+      "latency_ms": 809.95
+    },
+    {
+      "id": "model_handoff_07",
+      "expected_intent": "handoff",
+      "actual_intent": "handoff",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {},
+      "latency_ms": 725.74
+    },
+    {
+      "id": "model_handoff_08",
+      "expected_intent": "handoff",
+      "actual_intent": "handoff",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {},
+      "latency_ms": 1048.92
+    },
+    {
+      "id": "model_handoff_09",
+      "expected_intent": "handoff",
+      "actual_intent": "handoff",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {},
+      "latency_ms": 814.22
+    },
+    {
+      "id": "model_handoff_10",
+      "expected_intent": "handoff",
+      "actual_intent": "handoff",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {},
+      "latency_ms": 803.8
+    },
+    {
+      "id": "model_other_01",
+      "expected_intent": "other",
+      "actual_intent": "other",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": true,
+      "slot_checks": {},
+      "latency_ms": 704.07
+    },
+    {
+      "id": "model_other_02",
+      "expected_intent": "other",
+      "actual_intent": "other",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": true,
+      "slot_checks": {},
+      "latency_ms": 681.57
+    },
+    {
+      "id": "model_other_03",
+      "expected_intent": "other",
+      "actual_intent": "other",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": true,
+      "slot_checks": {},
+      "latency_ms": 667.51
+    },
+    {
+      "id": "model_other_04",
+      "expected_intent": "other",
+      "actual_intent": "other",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {},
+      "latency_ms": 706.79
+    },
+    {
+      "id": "model_other_05",
+      "expected_intent": "other",
+      "actual_intent": "other",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": true,
+      "slot_checks": {},
+      "latency_ms": 796.29
+    },
+    {
+      "id": "model_other_06",
+      "expected_intent": "other",
+      "actual_intent": "other",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {},
+      "latency_ms": 848.36
+    },
+    {
+      "id": "model_other_07",
+      "expected_intent": "other",
+      "actual_intent": "other",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": true,
+      "slot_checks": {},
+      "latency_ms": 672.8
+    },
+    {
+      "id": "model_other_08",
+      "expected_intent": "other",
+      "actual_intent": "other",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": true,
+      "slot_checks": {},
+      "latency_ms": 697.44
+    },
+    {
+      "id": "model_other_09",
+      "expected_intent": "other",
+      "actual_intent": "other",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": true,
+      "slot_checks": {},
+      "latency_ms": 756.97
+    },
+    {
+      "id": "model_other_10",
+      "expected_intent": "other",
+      "actual_intent": "other",
+      "intent_correct": true,
+      "expected_source": "model",
+      "actual_source": "model",
+      "source_correct": true,
+      "needs_clarification": false,
+      "slot_checks": {},
+      "latency_ms": 1169.65
+    }
+  ]
+}

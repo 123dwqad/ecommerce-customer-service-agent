@@ -1,0 +1,3444 @@
+{
+  "generated_at": "2026-10-08T08:00:48.389928+00:00",
+  "mode": "local_tools_llm_no_rag",
+  "metric_notes": "Task completion uses expected status/tool sequence and confirmation outcomes; parameter accuracy checks explicit order_id expectations. Authored local regression scenarios, not production benchmarks. RAG embedding provider: not used; RAG PDF parser: not used; MinerU production ingestion automatically falls back to pdfplumber. RAG evidence coverage is a normalized lexical check against each case's expected answer fragment, not an LLM relevance judgment. Fallback reason counts are exception type names only; no prompt, API key, or user text is logged.",
+  "summary": {
+    "total_cases": 100,
+    "passed_cases": 34,
+    "task_completion_rate": 0.34,
+    "intent_accuracy": 0.4757,
+    "intent_accuracy_e2e": 0.4757,
+    "intent_accuracy_when_model_returned": 0.8478,
+    "intent_source_counts": {
+      "model": 46,
+      "model_fallback": 49,
+      "rule": 8
+    },
+    "model_intent_fallback_rate": 0.5158,
+    "order_parameter_accuracy": 0.5581,
+    "order_parameter_accuracy_e2e": 0.5581,
+    "order_parameter_accuracy_when_tool_reached": 1.0,
+    "order_parameter_tool_reach_rate": 0.5581,
+    "order_parameter_cases_not_reached_after_model_fallback": 19,
+    "unauthorized_intercept_rate": 0.6667,
+    "unauthorized_intercept_rate_e2e": 0.6667,
+    "unauthorized_business_reach_rate": 0.6667,
+    "unauthorized_intercept_rate_when_business_reached": 1.0,
+    "unauthorized_no_leak_rate": 1.0,
+    "average_latency_ms": 1987.96,
+    "p95_latency_ms": 7221.85,
+    "model_intent_call_rate": 0.9223,
+    "model_intent_success_rate": 0.4842,
+    "metric_denominators": {
+      "intent_all_steps": 103,
+      "intent_model_returned": 46,
+      "intent_model_attempted": 95,
+      "order_parameter_expected": 43,
+      "order_parameter_tool_reached": 24,
+      "unauthorized_cases": 6,
+      "unauthorized_business_reached": 4,
+      "intent_model_fallbacks": 49
+    },
+    "metric_counts": {
+      "intent_all_correct": 49,
+      "intent_model_returned_correct": 39,
+      "order_parameter_e2e_correct": 24,
+      "order_parameter_correct_when_tool_reached": 24,
+      "unauthorized_e2e_intercepted": 4,
+      "unauthorized_intercepted_when_business_reached": 4,
+      "unauthorized_cases_without_data_leak": 6
+    },
+    "rag_tool_calls": null,
+    "rag_nonempty_result_rate": null,
+    "rag_expected_evidence_coverage": null,
+    "rag_no_result_rejection_rate": null,
+    "model_fallback_reason_counts": {
+      "APIConnectionError": 44,
+      "TimeoutError": 4,
+      "ValidationError": 1
+    }
+  },
+  "results": [
+    {
+      "case_id": "product_01",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "P100 轻享无线耳机不支持主动降噪。",
+          "intent": "product_consult",
+          "status": "ok",
+          "intent_source": "model",
+          "intent_slots": {
+            "product_id": "P100"
+          },
+          "data": {
+            "status": "ok",
+            "hits": [
+              {
+                "id": "P100",
+                "title": "轻享无线耳机",
+                "text": "演示售价 199.00 元。蓝牙 5.3，单次续航 6 小时，USB-C 充电，支持通话，不支持主动降噪。",
+                "source": "catalog://demo/P100",
+                "version": "catalog-demo-v1"
+              }
+            ],
+            "backend": "local_keyword"
+          },
+          "sources": [
+            {
+              "source": "catalog://demo/P100",
+              "version": "catalog-demo-v1",
+              "title": "轻享无线耳机"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "search_knowledge",
+              "arguments": {
+                "query": "P100 耳机支持降噪吗",
+                "product_id": "P100"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 19.7
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "d86978d946284505a586a1db609e3e1b",
+          "latency_ms": 8729.87
+        }
+      ]
+    },
+    {
+      "case_id": "product_02",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "d854f86fd5234db2bc9adc4f9e32ceba",
+          "latency_ms": 20.42
+        }
+      ]
+    },
+    {
+      "case_id": "product_03",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "定制刻字杯：演示售价 99.00 元。陶瓷杯 350ml，支持定制刻字。定制商品不适用本演示店铺的无理由退货政策，质量问题转人工核实。",
+          "intent": "product_consult",
+          "status": "model_fallback",
+          "intent_source": "model",
+          "intent_slots": {
+            "product_id": "P300"
+          },
+          "data": {
+            "status": "ok",
+            "hits": [
+              {
+                "id": "P300",
+                "title": "定制刻字杯",
+                "text": "演示售价 99.00 元。陶瓷杯 350ml，支持定制刻字。定制商品不适用本演示店铺的无理由退货政策，质量问题转人工核实。",
+                "source": "catalog://demo/P300",
+                "version": "catalog-demo-v1"
+              }
+            ],
+            "backend": "local_keyword"
+          },
+          "sources": [
+            {
+              "source": "catalog://demo/P300",
+              "version": "catalog-demo-v1",
+              "title": "定制刻字杯"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "search_knowledge",
+              "arguments": {
+                "query": "P300 定制杯容量",
+                "product_id": "P300"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 15.98
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "8b3ba901af5f4e0db03f8b67cae330d3",
+          "latency_ms": 3108.34
+        }
+      ]
+    },
+    {
+      "case_id": "no_results",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "6c208c850e2c428989e8a97cca2853bd",
+          "latency_ms": 17.74
+        }
+      ]
+    },
+    {
+      "case_id": "order_list",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "请选择或提供要处理的订单号。",
+          "intent": "order_query",
+          "status": "ok",
+          "intent_source": "rule",
+          "intent_slots": {},
+          "data": {
+            "status": "ok",
+            "orders": [
+              {
+                "order_id": "O36521D0302",
+                "product_id": "P100",
+                "product_name": "轻享无线耳机",
+                "status": "shipped",
+                "signed_at": null,
+                "version": 1,
+                "policy_version": "RETURN-DEMO-v1"
+              },
+              {
+                "order_id": "O75B9591C03",
+                "product_id": "P200",
+                "product_name": "纯棉基础 T 恤",
+                "status": "delivered",
+                "signed_at": 1791273392.954173,
+                "version": 1,
+                "policy_version": "RETURN-DEMO-v1"
+              },
+              {
+                "order_id": "O88AFFCE001",
+                "product_id": "P100",
+                "product_name": "轻享无线耳机",
+                "status": "paid",
+                "signed_at": null,
+                "version": 1,
+                "policy_version": "RETURN-DEMO-v1"
+              }
+            ]
+          },
+          "sources": [],
+          "tool_trace": [
+            {
+              "tool": "list_orders",
+              "arguments": {},
+              "success": true,
+              "status": "ok",
+              "duration_ms": 4.3
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "ddae61ff5ad346728d7a99faee7e0d5e",
+          "latency_ms": 8.22
+        }
+      ]
+    },
+    {
+      "case_id": "order_detail",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "订单 OFB8643FB01，商品：轻享无线耳机；状态：已付款，待发货。",
+          "intent": "order_query",
+          "status": "ok",
+          "intent_source": "rule",
+          "intent_slots": {},
+          "data": {
+            "status": "ok",
+            "order": {
+              "order_id": "OFB8643FB01",
+              "product_id": "P100",
+              "product_name": "轻享无线耳机",
+              "status": "paid",
+              "signed_at": null,
+              "version": 1,
+              "policy_version": "RETURN-DEMO-v1"
+            }
+          },
+          "sources": [],
+          "tool_trace": [
+            {
+              "tool": "query_order",
+              "arguments": {
+                "order_id": "OFB8643FB01"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 3.32
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "e5d06021b3ef47c2812bd0158f67759c",
+          "latency_ms": 8.33
+        }
+      ]
+    },
+    {
+      "case_id": "logistics",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "订单 O1276EE5B02：运输中",
+          "intent": "logistics_query",
+          "status": "ok",
+          "intent_source": "model",
+          "intent_slots": {
+            "order_id": "O1276EE5B02"
+          },
+          "data": {
+            "status": "ok",
+            "order_id": "O1276EE5B02",
+            "events": [
+              {
+                "status": "shipped",
+                "description": "运输中"
+              }
+            ]
+          },
+          "sources": [],
+          "tool_trace": [
+            {
+              "tool": "query_order",
+              "arguments": {
+                "order_id": "O1276EE5B02"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 4.03
+            },
+            {
+              "tool": "query_logistics",
+              "arguments": {
+                "order_id": "O1276EE5B02"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 1.8
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "61a69f6bd6d049c28a19de69f3064d12",
+          "latency_ms": 2141.98
+        }
+      ]
+    },
+    {
+      "case_id": "policy_general",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "24e2b290441c4f0aa2a8b65805e6138d",
+          "latency_ms": 17.2
+        }
+      ]
+    },
+    {
+      "case_id": "eligible",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "符合提交无理由退货申请的初步条件，后续还需核实商品完好情况；不代表退款获批。",
+          "intent": "after_sales",
+          "status": "eligible",
+          "intent_source": "model",
+          "intent_slots": {
+            "order_id": "O9CFDB6F703"
+          },
+          "data": {
+            "order_id": "O9CFDB6F703",
+            "policy_version": "RETURN-DEMO-v1",
+            "source": "merchant://demo/policies/RETURN-DEMO-v1",
+            "policy_text": "演示店铺规则：普通非定制商品签收后 7×24 小时内可提交无理由退货申请，需后续核实商品完好情况。提交申请不代表退款成功。定制商品、质量争议及超期诉求转人工处理。本规则是项目演示数据，不代表所有商品的法定售后权利。",
+            "eligible": true,
+            "status": "eligible",
+            "reason": "符合提交无理由退货申请的初步条件，后续还需核实商品完好情况；不代表退款获批。",
+            "retrieval_sources": [
+              "merchant://demo/policies/RETURN-DEMO-v1"
+            ]
+          },
+          "sources": [
+            {
+              "source": "merchant://demo/policies/RETURN-DEMO-v1",
+              "version": "RETURN-DEMO-v1",
+              "title": "订单适用售后规则"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "query_order",
+              "arguments": {
+                "order_id": "O9CFDB6F703"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 3.08
+            },
+            {
+              "tool": "search_knowledge",
+              "arguments": {
+                "query": "退货售后政策",
+                "product_id": null
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 13.08
+            },
+            {
+              "tool": "check_after_sales",
+              "arguments": {
+                "order_id": "O9CFDB6F703"
+              },
+              "success": true,
+              "status": "eligible",
+              "duration_ms": 2.15
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "d00424961ea14ffb8b1e7f344bf3ccd3",
+          "latency_ms": 3960.9
+        }
+      ]
+    },
+    {
+      "case_id": "not_signed",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "b9c4f8a9c4814eeb996a2742d74e5a03",
+          "latency_ms": 20.06
+        }
+      ]
+    },
+    {
+      "case_id": "cancel_pending",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "待确认：取消订单，订单 O043B27E601，商品 轻享无线耳机。请核对后点击确认（5 分钟内有效）。",
+          "intent": "cancel_order",
+          "status": "confirmation_required",
+          "intent_source": "rule",
+          "intent_slots": {},
+          "data": {
+            "status": "confirmation_required",
+            "confirmation_id": "FskUcHt8K2MWQbT89CIw_8ieX4-hWw2J",
+            "order_id": "O043B27E601",
+            "product_name": "轻享无线耳机",
+            "action": "cancel_order",
+            "source": "merchant://demo/rules/CANCEL-DEMO-v1",
+            "policy_version": "CANCEL-DEMO-v1",
+            "policy_text": "演示店铺：待付款或已付款未发货订单可申请取消；定制商品开始制作后、订单已发货或已完成时不能直接取消，需人工核实。实际取消前必须确认，取消订单不代表支付退款到账。",
+            "title": "订单取消规则",
+            "expires_in": 300,
+            "message": "请核对订单和操作，点击确认后才会提交。"
+          },
+          "sources": [
+            {
+              "source": "merchant://demo/rules/CANCEL-DEMO-v1",
+              "version": "CANCEL-DEMO-v1",
+              "title": "订单取消规则"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "query_order",
+              "arguments": {
+                "order_id": "O043B27E601"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 3.67
+            },
+            {
+              "tool": "prepare_operation",
+              "arguments": {
+                "order_id": "O043B27E601",
+                "action": "cancel_order"
+              },
+              "success": true,
+              "status": "confirmation_required",
+              "duration_ms": 6.52
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "2fe427a695d146cda0a3ef4c8ff184be",
+          "latency_ms": 15.35
+        }
+      ]
+    },
+    {
+      "case_id": "cancel_shipped",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "当前订单状态不允许直接取消，可转人工核实。",
+          "intent": "cancel_order",
+          "status": "invalid_state",
+          "intent_source": "rule",
+          "intent_slots": {},
+          "data": {
+            "error": "invalid_state"
+          },
+          "sources": [],
+          "tool_trace": [
+            {
+              "tool": "query_order",
+              "arguments": {
+                "order_id": "O46100E5402"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 3.49
+            },
+            {
+              "tool": "prepare_operation",
+              "arguments": {
+                "order_id": "O46100E5402",
+                "action": "cancel_order"
+              },
+              "success": false,
+              "duration_ms": 1.94
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "c4d33f677aed40d19eb512bb5f94dbd0",
+          "latency_ms": 8.95
+        }
+      ]
+    },
+    {
+      "case_id": "return_request",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "待确认：提交无理由退货申请，订单 O23FDD7A903，商品 纯棉基础 T 恤。请核对后点击确认（5 分钟内有效）。",
+          "intent": "create_after_sale",
+          "status": "confirmation_required",
+          "intent_source": "rule",
+          "intent_slots": {},
+          "data": {
+            "status": "confirmation_required",
+            "confirmation_id": "huKpeWGxjWpHk1gEVauoWapGSZYJZvr_",
+            "order_id": "O23FDD7A903",
+            "product_name": "纯棉基础 T 恤",
+            "action": "create_after_sale",
+            "source": "merchant://demo/policies/RETURN-DEMO-v1",
+            "policy_version": "RETURN-DEMO-v1",
+            "policy_text": "演示店铺规则：普通非定制商品签收后 7×24 小时内可提交无理由退货申请，需后续核实商品完好情况。提交申请不代表退款成功。定制商品、质量争议及超期诉求转人工处理。本规则是项目演示数据，不代表所有商品的法定售后权利。",
+            "expires_in": 300,
+            "message": "请核对订单和操作，点击确认后才会提交。"
+          },
+          "sources": [
+            {
+              "source": "merchant://demo/policies/RETURN-DEMO-v1",
+              "version": "RETURN-DEMO-v1",
+              "title": "订单适用售后规则"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "query_order",
+              "arguments": {
+                "order_id": "O23FDD7A903"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 3.87
+            },
+            {
+              "tool": "search_knowledge",
+              "arguments": {
+                "query": "退货售后政策",
+                "product_id": null
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 13.03
+            },
+            {
+              "tool": "check_after_sales",
+              "arguments": {
+                "order_id": "O23FDD7A903"
+              },
+              "success": true,
+              "status": "eligible",
+              "duration_ms": 2.59
+            },
+            {
+              "tool": "prepare_operation",
+              "arguments": {
+                "order_id": "O23FDD7A903",
+                "action": "create_after_sale"
+              },
+              "success": true,
+              "status": "confirmation_required",
+              "duration_ms": 7.79
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "72f51339c6cc4569920615a95fd6cead",
+          "latency_ms": 32.05
+        }
+      ]
+    },
+    {
+      "case_id": "missing_order",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "cancel_order",
+          "status": "clarification_required",
+          "intent_source": "model",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "c075bfe142714f578a01516273b1c0b6",
+          "latency_ms": 1937.48
+        }
+      ]
+    },
+    {
+      "case_id": "multiple_orders",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "3d4d0b9657f0445fae1e8c2f9a157a62",
+          "latency_ms": 18.84
+        }
+      ]
+    },
+    {
+      "case_id": "human",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "已记录到演示人工队列；尚未连接真实客服平台。",
+          "intent": "handoff",
+          "status": "queued",
+          "intent_source": "model",
+          "intent_slots": {},
+          "data": {
+            "status": "queued",
+            "handoff_id": "Ha18e4afd7e9d0685",
+            "message": "已记录到演示人工队列；尚未连接真实客服平台。"
+          },
+          "sources": [],
+          "tool_trace": [
+            {
+              "tool": "human_handoff",
+              "arguments": {},
+              "success": true,
+              "status": "queued",
+              "duration_ms": 13.57
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "fc74dd29c7954159b0b1a92b795ccf62",
+          "latency_ms": 4044.58
+        }
+      ]
+    },
+    {
+      "case_id": "quality_dispute",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "77c30d54193a4072a3175e088c118574",
+          "latency_ms": 18.63
+        }
+      ]
+    },
+    {
+      "case_id": "followup",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "订单 O50FF92FD03，商品：纯棉基础 T 恤；状态：已签收。",
+          "intent": "order_query",
+          "status": "ok",
+          "intent_source": "model",
+          "intent_slots": {
+            "order_id": "O50FF92FD03"
+          },
+          "data": {
+            "status": "ok",
+            "order": {
+              "order_id": "O50FF92FD03",
+              "product_id": "P200",
+              "product_name": "纯棉基础 T 恤",
+              "status": "delivered",
+              "signed_at": 1791273412.9885743,
+              "version": 1,
+              "policy_version": "RETURN-DEMO-v1"
+            }
+          },
+          "sources": [],
+          "tool_trace": [
+            {
+              "tool": "query_order",
+              "arguments": {
+                "order_id": "O50FF92FD03"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 5.27
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "58c1d3da3c4540bcbf7d904fbcb63a6b",
+          "latency_ms": 2891.86
+        },
+        {
+          "answer": "符合提交无理由退货申请的初步条件，后续还需核实商品完好情况；不代表退款获批。",
+          "intent": "after_sales",
+          "status": "eligible",
+          "intent_source": "model",
+          "intent_slots": {
+            "order_id": "O50FF92FD03"
+          },
+          "data": {
+            "order_id": "O50FF92FD03",
+            "policy_version": "RETURN-DEMO-v1",
+            "source": "merchant://demo/policies/RETURN-DEMO-v1",
+            "policy_text": "演示店铺规则：普通非定制商品签收后 7×24 小时内可提交无理由退货申请，需后续核实商品完好情况。提交申请不代表退款成功。定制商品、质量争议及超期诉求转人工处理。本规则是项目演示数据，不代表所有商品的法定售后权利。",
+            "eligible": true,
+            "status": "eligible",
+            "reason": "符合提交无理由退货申请的初步条件，后续还需核实商品完好情况；不代表退款获批。",
+            "retrieval_sources": [
+              "merchant://demo/policies/RETURN-DEMO-v1"
+            ]
+          },
+          "sources": [
+            {
+              "source": "merchant://demo/policies/RETURN-DEMO-v1",
+              "version": "RETURN-DEMO-v1",
+              "title": "订单适用售后规则"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "query_order",
+              "arguments": {
+                "order_id": "O50FF92FD03"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 3.77
+            },
+            {
+              "tool": "search_knowledge",
+              "arguments": {
+                "query": "退货售后政策",
+                "product_id": null
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 16.66
+            },
+            {
+              "tool": "check_after_sales",
+              "arguments": {
+                "order_id": "O50FF92FD03"
+              },
+              "success": true,
+              "status": "eligible",
+              "duration_ms": 3.71
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "6998d7c2720c43acb6cfbd733823173f",
+          "latency_ms": 1566.72
+        }
+      ]
+    },
+    {
+      "case_id": "cross_order",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "92f1758e90b54e04a15c473ee0e64d0b",
+          "latency_ms": 24.82
+        },
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "caf496e8592642388154d2b78f2b3947",
+          "latency_ms": 8020.57
+        }
+      ]
+    },
+    {
+      "case_id": "unauthorized_read",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "订单不存在或不属于当前账号，请核对订单号。",
+          "intent": "order_query",
+          "status": "order_access_denied",
+          "intent_source": "model",
+          "intent_slots": {
+            "order_id": "O34B3D3D303"
+          },
+          "data": {
+            "error": "order_access_denied"
+          },
+          "sources": [],
+          "tool_trace": [
+            {
+              "tool": "query_order",
+              "arguments": {
+                "order_id": "O34B3D3D303"
+              },
+              "success": false,
+              "duration_ms": 2.56
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "698718e4f26b4b63807f6bde0881d023",
+          "latency_ms": 4989.22
+        }
+      ]
+    },
+    {
+      "case_id": "unauthorized_cancel",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "订单不存在或不属于当前账号，请核对订单号。",
+          "intent": "cancel_order",
+          "status": "order_access_denied",
+          "intent_source": "rule",
+          "intent_slots": {},
+          "data": {
+            "error": "order_access_denied"
+          },
+          "sources": [],
+          "tool_trace": [
+            {
+              "tool": "query_order",
+              "arguments": {
+                "order_id": "O0045E25101"
+              },
+              "success": false,
+              "duration_ms": 3.8
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "9ac88f1357984131aeacd96727accbbe",
+          "latency_ms": 8.91
+        }
+      ]
+    },
+    {
+      "case_id": "unauthorized_return",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "订单不存在或不属于当前账号，请核对订单号。",
+          "intent": "create_after_sale",
+          "status": "order_access_denied",
+          "intent_source": "rule",
+          "intent_slots": {},
+          "data": {
+            "error": "order_access_denied"
+          },
+          "sources": [],
+          "tool_trace": [
+            {
+              "tool": "query_order",
+              "arguments": {
+                "order_id": "O00D248C503"
+              },
+              "success": false,
+              "duration_ms": 2.27
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "655dbc97f0764006a16695722754d803",
+          "latency_ms": 7.16
+        }
+      ]
+    },
+    {
+      "case_id": "purchase_rule",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "5fbbcad1dc3a4a9b93adcc1f8d5ad01c",
+          "latency_ms": 19.92
+        }
+      ]
+    },
+    {
+      "case_id": "coupon_rule",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "商品金额 398.00 元，门槛 200.00 元；可试算优惠 20.00 元。未发券、未修改订单。",
+          "intent": "rule_query",
+          "status": "eligible",
+          "intent_source": "model",
+          "intent_slots": {
+            "product_id": "P100",
+            "rule_topic": "coupon",
+            "quantity": 2
+          },
+          "data": {
+            "order_id": null,
+            "topic": "coupon",
+            "policy_version": "COUPON-DEMO-v1",
+            "source": "merchant://demo/rules/COUPON-DEMO-v1",
+            "title": "满减优惠与叠加规则",
+            "policy_text": "演示店铺：非定制商品单笔商品金额满 200 元减 20 元，运费不计入门槛；不与其他优惠叠加，定制商品不参与。这里只试算资格，不发券、不改订单价格。",
+            "status": "eligible",
+            "reason": "商品金额 398.00 元，门槛 200.00 元；可试算优惠 20.00 元。未发券、未修改订单。",
+            "facts": {
+              "merchandise_cents": 39800,
+              "discount_cents": 2000
+            }
+          },
+          "sources": [
+            {
+              "source": "merchant://demo/rules/COUPON-DEMO-v1",
+              "version": "COUPON-DEMO-v1",
+              "title": "满减优惠与叠加规则"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "check_business_rule",
+              "arguments": {
+                "topic": "coupon",
+                "order_id": null,
+                "product_id": "P100",
+                "quantity": 2,
+                "region": null
+              },
+              "success": true,
+              "status": "eligible",
+              "duration_ms": 3.76
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "028741ae4b754511b05d5bc796b3e58f",
+          "latency_ms": 3909.68
+        }
+      ]
+    },
+    {
+      "case_id": "freight_rule",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "2a7bea74526a429c956dab9922160ae4",
+          "latency_ms": 17.45
+        }
+      ]
+    },
+    {
+      "case_id": "dispatch_rule",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "订单 OAB8D0AEF01：待发货",
+          "intent": "logistics_query",
+          "status": "ok",
+          "intent_source": "model",
+          "intent_slots": {
+            "order_id": "OAB8D0AEF01"
+          },
+          "data": {
+            "status": "ok",
+            "order_id": "OAB8D0AEF01",
+            "events": [
+              {
+                "status": "paid",
+                "description": "待发货"
+              }
+            ]
+          },
+          "sources": [],
+          "tool_trace": [
+            {
+              "tool": "query_order",
+              "arguments": {
+                "order_id": "OAB8D0AEF01"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 4.68
+            },
+            {
+              "tool": "query_logistics",
+              "arguments": {
+                "order_id": "OAB8D0AEF01"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 1.58
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "322842361ea4449d8a309c6f8a59a21d",
+          "latency_ms": 4370.59
+        }
+      ]
+    },
+    {
+      "case_id": "address_rule",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "9a13f0cf3a7c4a81ad5794f65291d040",
+          "latency_ms": 20.68
+        }
+      ]
+    },
+    {
+      "case_id": "cancel_rule_readonly",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "符合申请条件。仍需点击订单确认卡片后才会取消。",
+          "intent": "rule_query",
+          "status": "eligible",
+          "intent_source": "model",
+          "intent_slots": {
+            "order_id": "O60A31D6401",
+            "rule_topic": "cancellation"
+          },
+          "data": {
+            "order_id": "O60A31D6401",
+            "topic": "cancellation",
+            "policy_version": "CANCEL-DEMO-v1",
+            "source": "merchant://demo/rules/CANCEL-DEMO-v1",
+            "title": "订单取消规则",
+            "policy_text": "演示店铺：待付款或已付款未发货订单可申请取消；定制商品开始制作后、订单已发货或已完成时不能直接取消，需人工核实。实际取消前必须确认，取消订单不代表支付退款到账。",
+            "status": "eligible",
+            "reason": "符合申请条件。仍需点击订单确认卡片后才会取消。",
+            "facts": {}
+          },
+          "sources": [
+            {
+              "source": "merchant://demo/rules/CANCEL-DEMO-v1",
+              "version": "CANCEL-DEMO-v1",
+              "title": "订单取消规则"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "check_business_rule",
+              "arguments": {
+                "topic": "cancellation",
+                "order_id": "O60A31D6401",
+                "product_id": null,
+                "quantity": null,
+                "region": null
+              },
+              "success": true,
+              "status": "eligible",
+              "duration_ms": 6.17
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "a97037922def470db5fd19af3abe8f8f",
+          "latency_ms": 2926.98
+        }
+      ]
+    },
+    {
+      "case_id": "invoice_rule",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "cf7f97499e4d4e90931524f584884300",
+          "latency_ms": 24.65
+        }
+      ]
+    },
+    {
+      "case_id": "price_rule",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "与同一商品当前演示价格比较，参考差额 0.00 元；未提交保价申请或退款。",
+          "intent": "rule_query",
+          "status": "not_eligible",
+          "intent_source": "model",
+          "intent_slots": {
+            "order_id": "O78714B9203",
+            "rule_topic": "price_protection"
+          },
+          "data": {
+            "order_id": "O78714B9203",
+            "topic": "price_protection",
+            "policy_version": "PRICE-DEMO-v1",
+            "source": "merchant://demo/rules/PRICE-DEMO-v1",
+            "title": "降价保护规则",
+            "policy_text": "演示店铺：非定制商品付款后 168 小时内，同一商品当前商品价低于订单商品实付单价时，可申请核实差价；不计运费、不跨商品比较，定制商品不参与。仅计算参考差额，尚未实现保价申请或自动退款。",
+            "status": "not_eligible",
+            "reason": "与同一商品当前演示价格比较，参考差额 0.00 元；未提交保价申请或退款。",
+            "facts": {
+              "difference_cents": 0
+            }
+          },
+          "sources": [
+            {
+              "source": "merchant://demo/rules/PRICE-DEMO-v1",
+              "version": "PRICE-DEMO-v1",
+              "title": "降价保护规则"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "check_business_rule",
+              "arguments": {
+                "topic": "price_protection",
+                "order_id": "O78714B9203",
+                "product_id": null,
+                "quantity": null,
+                "region": null
+              },
+              "success": true,
+              "status": "not_eligible",
+              "duration_ms": 4.83
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "d7c3be9d0f03439da5675b349541dc10",
+          "latency_ms": 3245.65
+        }
+      ]
+    },
+    {
+      "case_id": "logistics_stale_rule",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "0ab6a726274445749b6b1fe62a551acd",
+          "latency_ms": 20.78
+        }
+      ]
+    },
+    {
+      "case_id": "invoice_privacy",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "订单不存在或不属于当前账号，请核对订单号。",
+          "intent": "rule_query",
+          "status": "order_access_denied",
+          "intent_source": "model",
+          "intent_slots": {
+            "order_id": "OC3804EE603",
+            "rule_topic": "invoice"
+          },
+          "data": {
+            "error": "order_access_denied"
+          },
+          "sources": [],
+          "tool_trace": [
+            {
+              "tool": "check_business_rule",
+              "arguments": {
+                "topic": "invoice",
+                "order_id": "OC3804EE603",
+                "product_id": null,
+                "quantity": null,
+                "region": null
+              },
+              "success": false,
+              "duration_ms": 3.17
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "0280313ad5254597926756f6f1053f80",
+          "latency_ms": 2768.42
+        }
+      ]
+    },
+    {
+      "case_id": "product_p101",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "7843d09bf1b2410898ec81dcdabfebe6",
+          "latency_ms": 25.16
+        }
+      ]
+    },
+    {
+      "case_id": "product_p102",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "P102 便携蓝牙音箱一次充电可以使用10小时。",
+          "intent": "product_consult",
+          "status": "ok",
+          "intent_source": "model",
+          "intent_slots": {
+            "product_id": "P102"
+          },
+          "data": {
+            "status": "ok",
+            "hits": [
+              {
+                "id": "P102",
+                "title": "便携蓝牙音箱",
+                "text": "演示售价 159.00 元。蓝牙连接，续航 10 小时，USB-C 充电。",
+                "source": "catalog://demo/P102",
+                "version": "catalog-demo-v1"
+              }
+            ],
+            "backend": "local_keyword"
+          },
+          "sources": [
+            {
+              "source": "catalog://demo/P102",
+              "version": "catalog-demo-v1",
+              "title": "便携蓝牙音箱"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "search_knowledge",
+              "arguments": {
+                "query": "P102 音箱一次充电能用多久",
+                "product_id": "P102"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 15.52
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "8ddd6cb7b61344b6b23dd2aacf6cd899",
+          "latency_ms": 5833.23
+        }
+      ]
+    },
+    {
+      "case_id": "product_p103",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "51088bf93475420ebcc508f17e29baa3",
+          "latency_ms": 27.68
+        }
+      ]
+    },
+    {
+      "case_id": "product_p104",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "无线办公鼠标：演示售价 69.00 元。2.4GHz 接收器连接，使用 AA 电池。",
+          "intent": "product_consult",
+          "status": "model_fallback",
+          "intent_source": "model",
+          "intent_slots": {
+            "product_id": "P104"
+          },
+          "data": {
+            "status": "ok",
+            "hits": [
+              {
+                "id": "P104",
+                "title": "无线办公鼠标",
+                "text": "演示售价 69.00 元。2.4GHz 接收器连接，使用 AA 电池。",
+                "source": "catalog://demo/P104",
+                "version": "catalog-demo-v1"
+              }
+            ],
+            "backend": "local_keyword"
+          },
+          "sources": [
+            {
+              "source": "catalog://demo/P104",
+              "version": "catalog-demo-v1",
+              "title": "无线办公鼠标"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "search_knowledge",
+              "arguments": {
+                "query": "P104 鼠标怎么连接电脑",
+                "product_id": "P104"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 15.45
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "1ea93995ab2c4dc088a88c61a4144c70",
+          "latency_ms": 3645.91
+        }
+      ]
+    },
+    {
+      "case_id": "product_p105",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "d3e057a37e6a4e93a89750f8343efeb1",
+          "latency_ms": 20.3
+        }
+      ]
+    },
+    {
+      "case_id": "product_p106",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "桌面阅读灯有三档色温。",
+          "intent": "product_consult",
+          "status": "ok",
+          "intent_source": "model",
+          "intent_slots": {
+            "product_id": "P106"
+          },
+          "data": {
+            "status": "ok",
+            "hits": [
+              {
+                "id": "P106",
+                "title": "桌面阅读灯",
+                "text": "演示售价 119.00 元。三档色温，亮度可调，插电使用。",
+                "source": "catalog://demo/P106",
+                "version": "catalog-demo-v1"
+              }
+            ],
+            "backend": "local_keyword"
+          },
+          "sources": [
+            {
+              "source": "catalog://demo/P106",
+              "version": "catalog-demo-v1",
+              "title": "桌面阅读灯"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "search_knowledge",
+              "arguments": {
+                "query": "P106 阅读灯有几档色温",
+                "product_id": "P106"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 17.3
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "9c385c07e02043018dcc3d0b8cb433e5",
+          "latency_ms": 6832.95
+        }
+      ]
+    },
+    {
+      "case_id": "product_p201",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "79423e766f5e43b6bc7567f58e984ba5",
+          "latency_ms": 25.07
+        }
+      ]
+    },
+    {
+      "case_id": "product_p202",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "直筒休闲裤：演示售价 139.00 元。弹力腰围，M/L/XL，常规直筒版型。",
+          "intent": "product_consult",
+          "status": "model_fallback",
+          "intent_source": "model",
+          "intent_slots": {
+            "product_id": "P202"
+          },
+          "data": {
+            "status": "ok",
+            "hits": [
+              {
+                "id": "P202",
+                "title": "直筒休闲裤",
+                "text": "演示售价 139.00 元。弹力腰围，M/L/XL，常规直筒版型。",
+                "source": "catalog://demo/P202",
+                "version": "catalog-demo-v1"
+              }
+            ],
+            "backend": "local_keyword"
+          },
+          "sources": [
+            {
+              "source": "catalog://demo/P202",
+              "version": "catalog-demo-v1",
+              "title": "直筒休闲裤"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "search_knowledge",
+              "arguments": {
+                "query": "P202 休闲裤是什么版型",
+                "product_id": "P202"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 16.81
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "a8f342d2291143f1a4a7b622dc318c20",
+          "latency_ms": 2080.35
+        }
+      ]
+    },
+    {
+      "case_id": "product_p203",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "19cefd92a1834bc4aa0112abe9aff22f",
+          "latency_ms": 21.61
+        }
+      ]
+    },
+    {
+      "case_id": "product_p204",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "P204 短袜一包有三双。",
+          "intent": "product_consult",
+          "status": "ok",
+          "intent_source": "model",
+          "intent_slots": {
+            "product_id": "P204"
+          },
+          "data": {
+            "status": "ok",
+            "hits": [
+              {
+                "id": "P204",
+                "title": "基础短袜三双装",
+                "text": "演示售价 29.00 元。棉混纺，均码，三双一组。",
+                "source": "catalog://demo/P204",
+                "version": "catalog-demo-v1"
+              }
+            ],
+            "backend": "local_keyword"
+          },
+          "sources": [
+            {
+              "source": "catalog://demo/P204",
+              "version": "catalog-demo-v1",
+              "title": "基础短袜三双装"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "search_knowledge",
+              "arguments": {
+                "query": "P204 短袜一包有几双",
+                "product_id": "P204"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 15.08
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "7ceb840178194e38ac60f1e7c40b1c09",
+          "latency_ms": 7221.85
+        }
+      ]
+    },
+    {
+      "case_id": "product_p205",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "fccbcef3db844fa9a4e064f88c0ec0de",
+          "latency_ms": 20.53
+        }
+      ]
+    },
+    {
+      "case_id": "product_p301",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "定制帆布袋：演示售价 59.00 元。支持单面文字印制，制作前核对内容。",
+          "intent": "product_consult",
+          "status": "model_fallback",
+          "intent_source": "model",
+          "intent_slots": {
+            "product_id": "P301"
+          },
+          "data": {
+            "status": "ok",
+            "hits": [
+              {
+                "id": "P301",
+                "title": "定制帆布袋",
+                "text": "演示售价 59.00 元。支持单面文字印制，制作前核对内容。",
+                "source": "catalog://demo/P301",
+                "version": "catalog-demo-v1"
+              }
+            ],
+            "backend": "local_keyword"
+          },
+          "sources": [
+            {
+              "source": "catalog://demo/P301",
+              "version": "catalog-demo-v1",
+              "title": "定制帆布袋"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "search_knowledge",
+              "arguments": {
+                "query": "P301 帆布袋可以印字吗",
+                "product_id": "P301"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 16.89
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "307e75aa6be44cf0aa1236421839926a",
+          "latency_ms": 2725.87
+        }
+      ]
+    },
+    {
+      "case_id": "product_p302",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "f9a296c9b448484ebd72e521c4ee3686",
+          "latency_ms": 29.38
+        }
+      ]
+    },
+    {
+      "case_id": "product_p303",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "P303 钥匙扣的材质是金属。",
+          "intent": "product_consult",
+          "status": "ok",
+          "intent_source": "model",
+          "intent_slots": {
+            "product_id": "P303"
+          },
+          "data": {
+            "status": "ok",
+            "hits": [
+              {
+                "id": "P303",
+                "title": "定制钥匙扣",
+                "text": "演示售价 39.00 元。金属材质，支持单面刻字。",
+                "source": "catalog://demo/P303",
+                "version": "catalog-demo-v1"
+              }
+            ],
+            "backend": "local_keyword"
+          },
+          "sources": [
+            {
+              "source": "catalog://demo/P303",
+              "version": "catalog-demo-v1",
+              "title": "定制钥匙扣"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "search_knowledge",
+              "arguments": {
+                "query": "P303 钥匙扣是什么材质",
+                "product_id": "P303"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 22.45
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "a665e519361943e8a9258df93229a830",
+          "latency_ms": 5834.88
+        }
+      ]
+    },
+    {
+      "case_id": "product_p304",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "99e058b44b644deb86ca77e576edc434",
+          "latency_ms": 27.25
+        }
+      ]
+    },
+    {
+      "case_id": "order_03",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "订单 OB053A4B401，商品：轻享无线耳机；状态：已付款，待发货。",
+          "intent": "order_query",
+          "status": "ok",
+          "intent_source": "model",
+          "intent_slots": {
+            "order_id": "OB053A4B401"
+          },
+          "data": {
+            "status": "ok",
+            "order": {
+              "order_id": "OB053A4B401",
+              "product_id": "P100",
+              "product_name": "轻享无线耳机",
+              "status": "paid",
+              "signed_at": null,
+              "version": 1,
+              "policy_version": "RETURN-DEMO-v1"
+            }
+          },
+          "sources": [],
+          "tool_trace": [
+            {
+              "tool": "query_order",
+              "arguments": {
+                "order_id": "OB053A4B401"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 3.26
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "380c19f66ab94712bea3fe25900bec99",
+          "latency_ms": 3914.77
+        }
+      ]
+    },
+    {
+      "case_id": "order_04",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "4c8bedb29c4e436d93b43a2d70d1a571",
+          "latency_ms": 21.95
+        }
+      ]
+    },
+    {
+      "case_id": "order_05",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "请选择或提供要处理的订单号。",
+          "intent": "order_query",
+          "status": "ok",
+          "intent_source": "model",
+          "intent_slots": {},
+          "data": {
+            "status": "ok",
+            "orders": [
+              {
+                "order_id": "O1A41FB4E01",
+                "product_id": "P100",
+                "product_name": "轻享无线耳机",
+                "status": "paid",
+                "signed_at": null,
+                "version": 1,
+                "policy_version": "RETURN-DEMO-v1"
+              },
+              {
+                "order_id": "O688E779C03",
+                "product_id": "P200",
+                "product_name": "纯棉基础 T 恤",
+                "status": "delivered",
+                "signed_at": 1791273506.7028947,
+                "version": 1,
+                "policy_version": "RETURN-DEMO-v1"
+              },
+              {
+                "order_id": "OE1EB5E0602",
+                "product_id": "P100",
+                "product_name": "轻享无线耳机",
+                "status": "shipped",
+                "signed_at": null,
+                "version": 1,
+                "policy_version": "RETURN-DEMO-v1"
+              }
+            ]
+          },
+          "sources": [],
+          "tool_trace": [
+            {
+              "tool": "list_orders",
+              "arguments": {},
+              "success": true,
+              "status": "ok",
+              "duration_ms": 8.2
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "fbbe8a7474914dca9d3f7ff2ea472f87",
+          "latency_ms": 1867.53
+        }
+      ]
+    },
+    {
+      "case_id": "logistics_02",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "741abc2a66f84c198cecec9c21c5bbe3",
+          "latency_ms": 22.16
+        }
+      ]
+    },
+    {
+      "case_id": "logistics_03",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "683e2315a8a242b2bf7a070f89fe3fb2",
+          "latency_ms": 8020.74
+        }
+      ]
+    },
+    {
+      "case_id": "logistics_04",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "448808b7c96745e3a41a108260d25ef1",
+          "latency_ms": 8007.89
+        }
+      ]
+    },
+    {
+      "case_id": "logistics_followup",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "订单 OD30C18B402，商品：轻享无线耳机；状态：已发货。",
+          "intent": "order_query",
+          "status": "ok",
+          "intent_source": "model",
+          "intent_slots": {
+            "order_id": "OD30C18B402"
+          },
+          "data": {
+            "status": "ok",
+            "order": {
+              "order_id": "OD30C18B402",
+              "product_id": "P100",
+              "product_name": "轻享无线耳机",
+              "status": "shipped",
+              "signed_at": null,
+              "version": 1,
+              "policy_version": "RETURN-DEMO-v1"
+            }
+          },
+          "sources": [],
+          "tool_trace": [
+            {
+              "tool": "query_order",
+              "arguments": {
+                "order_id": "OD30C18B402"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 4.09
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "3dbc473ef9dc4d4a9607892cd6017665",
+          "latency_ms": 5011.54
+        },
+        {
+          "answer": "订单 OD30C18B402：运输中",
+          "intent": "logistics_query",
+          "status": "ok",
+          "intent_source": "model",
+          "intent_slots": {
+            "order_id": "OD30C18B402"
+          },
+          "data": {
+            "status": "ok",
+            "order_id": "OD30C18B402",
+            "events": [
+              {
+                "status": "shipped",
+                "description": "运输中"
+              }
+            ]
+          },
+          "sources": [],
+          "tool_trace": [
+            {
+              "tool": "query_order",
+              "arguments": {
+                "order_id": "OD30C18B402"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 3.45
+            },
+            {
+              "tool": "query_logistics",
+              "arguments": {
+                "order_id": "OD30C18B402"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 1.58
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "5cdf161855e640cdb81205b079acf221",
+          "latency_ms": 1429.17
+        }
+      ]
+    },
+    {
+      "case_id": "purchase_limit_boundary",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "f7f990ba020849e9a0005510d1aca99d",
+          "latency_ms": 18.96
+        }
+      ]
+    },
+    {
+      "case_id": "purchase_stock_boundary",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "轻享无线耳机：演示售价 199.00 元。蓝牙 5.3，单次续航 6 小时，USB-C 充电，支持通话，不支持主动降噪。\n\n库存与限购规则：演示店铺：单笔最多购买 5 件，且购买数量不得超过演示库存；库存查询不锁库存，实际成交以提交订单时校验为准。",
+          "intent": "product_consult",
+          "status": "model_fallback",
+          "intent_source": "model",
+          "intent_slots": {
+            "product_id": "P100",
+            "quantity": 13
+          },
+          "data": {
+            "status": "ok",
+            "hits": [
+              {
+                "id": "P100",
+                "title": "轻享无线耳机",
+                "text": "演示售价 199.00 元。蓝牙 5.3，单次续航 6 小时，USB-C 充电，支持通话，不支持主动降噪。",
+                "source": "catalog://demo/P100",
+                "version": "catalog-demo-v1"
+              },
+              {
+                "id": "PURCHASE-DEMO-v1",
+                "title": "库存与限购规则",
+                "text": "演示店铺：单笔最多购买 5 件，且购买数量不得超过演示库存；库存查询不锁库存，实际成交以提交订单时校验为准。",
+                "source": "merchant://demo/rules/PURCHASE-DEMO-v1",
+                "version": "PURCHASE-DEMO-v1"
+              }
+            ],
+            "backend": "local_keyword"
+          },
+          "sources": [
+            {
+              "source": "catalog://demo/P100",
+              "version": "catalog-demo-v1",
+              "title": "轻享无线耳机"
+            },
+            {
+              "source": "merchant://demo/rules/PURCHASE-DEMO-v1",
+              "version": "PURCHASE-DEMO-v1",
+              "title": "库存与限购规则"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "search_knowledge",
+              "arguments": {
+                "query": "P100 买13件有库存吗",
+                "product_id": "P100"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 17.48
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "9d8475555c4948219730e6f2408d0923",
+          "latency_ms": 2253.66
+        }
+      ]
+    },
+    {
+      "case_id": "purchase_missing_quantity",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "16e492e58d854624b79e64ea2e76d742",
+          "latency_ms": 30.65
+        }
+      ]
+    },
+    {
+      "case_id": "coupon_below_threshold",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "该商品演示库存 12 件，单笔限购 5 件；本次 1 件可购买，但尚未锁库存。",
+          "intent": "rule_query",
+          "status": "eligible",
+          "intent_source": "model",
+          "intent_slots": {
+            "product_id": "P100",
+            "rule_topic": "purchase",
+            "quantity": 1
+          },
+          "data": {
+            "order_id": null,
+            "topic": "purchase",
+            "policy_version": "PURCHASE-DEMO-v1",
+            "source": "merchant://demo/rules/PURCHASE-DEMO-v1",
+            "title": "库存与限购规则",
+            "policy_text": "演示店铺：单笔最多购买 5 件，且购买数量不得超过演示库存；库存查询不锁库存，实际成交以提交订单时校验为准。",
+            "status": "eligible",
+            "reason": "该商品演示库存 12 件，单笔限购 5 件；本次 1 件可购买，但尚未锁库存。",
+            "facts": {
+              "quantity": 1,
+              "stock": 12,
+              "max_quantity": 5
+            }
+          },
+          "sources": [
+            {
+              "source": "merchant://demo/rules/PURCHASE-DEMO-v1",
+              "version": "PURCHASE-DEMO-v1",
+              "title": "库存与限购规则"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "check_business_rule",
+              "arguments": {
+                "topic": "purchase",
+                "order_id": null,
+                "product_id": "P100",
+                "quantity": 1,
+                "region": null
+              },
+              "success": true,
+              "status": "eligible",
+              "duration_ms": 2.2
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "3bfbd1d562e54073bea5b1803749f18a",
+          "latency_ms": 5890.12
+        }
+      ]
+    },
+    {
+      "case_id": "coupon_threshold",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "c11154b44cbf40ee9b89a078eb312a7a",
+          "latency_ms": 25.26
+        }
+      ]
+    },
+    {
+      "case_id": "freight_free_threshold",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "按商品实付参考金额 158.00 元试算，运费 0.00 元；未修改运费或创建订单。",
+          "intent": "rule_query",
+          "status": "eligible",
+          "intent_source": "model",
+          "intent_slots": {
+            "product_id": "P200",
+            "rule_topic": "shipping_fee",
+            "quantity": 2,
+            "region": "standard"
+          },
+          "data": {
+            "order_id": null,
+            "topic": "shipping_fee",
+            "policy_version": "FREIGHT-DEMO-v1",
+            "source": "merchant://demo/rules/FREIGHT-DEMO-v1",
+            "title": "运费与配送范围规则",
+            "policy_text": "演示店铺：普通配送区域商品实付金额满 99 元包邮，不足收取 8 元；新疆、西藏统一收取 20 元，不参加包邮；港澳台及海外暂不配送。不需要提供详细地址，区域与金额未明确时不报确定运费。",
+            "status": "eligible",
+            "reason": "按商品实付参考金额 158.00 元试算，运费 0.00 元；未修改运费或创建订单。",
+            "facts": {
+              "shipping_fee_cents": 0,
+              "merchandise_cents": 15800,
+              "region": "standard"
+            }
+          },
+          "sources": [
+            {
+              "source": "merchant://demo/rules/FREIGHT-DEMO-v1",
+              "version": "FREIGHT-DEMO-v1",
+              "title": "运费与配送范围规则"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "check_business_rule",
+              "arguments": {
+                "topic": "shipping_fee",
+                "order_id": null,
+                "product_id": "P200",
+                "quantity": 2,
+                "region": "standard"
+              },
+              "success": true,
+              "status": "eligible",
+              "duration_ms": 3.25
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "8289b40f9adf4298b46d06b28e4f0664",
+          "latency_ms": 3003.52
+        }
+      ]
+    },
+    {
+      "case_id": "freight_remote",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "3f314e530ae44e0ca4723fe1779f0764",
+          "latency_ms": 24.99
+        }
+      ]
+    },
+    {
+      "case_id": "freight_unsupported",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "演示店铺暂不配送到港澳台及海外。",
+          "intent": "rule_query",
+          "status": "not_eligible",
+          "intent_source": "model",
+          "intent_slots": {
+            "product_id": "P200",
+            "rule_topic": "shipping_fee",
+            "quantity": 1,
+            "region": "unsupported"
+          },
+          "data": {
+            "order_id": null,
+            "topic": "shipping_fee",
+            "policy_version": "FREIGHT-DEMO-v1",
+            "source": "merchant://demo/rules/FREIGHT-DEMO-v1",
+            "title": "运费与配送范围规则",
+            "policy_text": "演示店铺：普通配送区域商品实付金额满 99 元包邮，不足收取 8 元；新疆、西藏统一收取 20 元，不参加包邮；港澳台及海外暂不配送。不需要提供详细地址，区域与金额未明确时不报确定运费。",
+            "status": "not_eligible",
+            "reason": "演示店铺暂不配送到港澳台及海外。",
+            "facts": {}
+          },
+          "sources": [
+            {
+              "source": "merchant://demo/rules/FREIGHT-DEMO-v1",
+              "version": "FREIGHT-DEMO-v1",
+              "title": "运费与配送范围规则"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "check_business_rule",
+              "arguments": {
+                "topic": "shipping_fee",
+                "order_id": null,
+                "product_id": "P200",
+                "quantity": 1,
+                "region": "unsupported"
+              },
+              "success": true,
+              "status": "not_eligible",
+              "duration_ms": 2.81
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "15cdca7b733e4b799d56b1e514d9d595",
+          "latency_ms": 5887.77
+        }
+      ]
+    },
+    {
+      "case_id": "freight_missing_region",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "cc7518c524dc45d982100601514e2d43",
+          "latency_ms": 24.48
+        }
+      ]
+    },
+    {
+      "case_id": "dispatch_rule_variant",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "适用付款后 48 小时发货规则；目前仍在发货时限内，不承诺到达日期。",
+          "intent": "rule_query",
+          "status": "ok",
+          "intent_source": "model",
+          "intent_slots": {
+            "order_id": "OC3E15FBC01",
+            "rule_topic": "dispatch"
+          },
+          "data": {
+            "order_id": "OC3E15FBC01",
+            "topic": "dispatch",
+            "policy_version": "DISPATCH-DEMO-v1",
+            "source": "merchant://demo/rules/DISPATCH-DEMO-v1",
+            "title": "付款与发货时效规则",
+            "policy_text": "演示店铺：普通现货付款后 48 小时内发货；定制商品付款后 120 小时内发货。未付款不计算时效；超时未发货可转人工核实，不承诺快递到达日期。",
+            "status": "ok",
+            "reason": "适用付款后 48 小时发货规则；目前仍在发货时限内，不承诺到达日期。",
+            "facts": {
+              "deadline": "2026-10-10T14:59:17.531904+08:00"
+            }
+          },
+          "sources": [
+            {
+              "source": "merchant://demo/rules/DISPATCH-DEMO-v1",
+              "version": "DISPATCH-DEMO-v1",
+              "title": "付款与发货时效规则"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "check_business_rule",
+              "arguments": {
+                "topic": "dispatch",
+                "order_id": "OC3E15FBC01",
+                "product_id": null,
+                "quantity": null,
+                "region": null
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 5.96
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "5ac50ad104144147a92e9e60e7c3030d",
+          "latency_ms": 2338.36
+        }
+      ]
+    },
+    {
+      "case_id": "address_rule_paid",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "fc708c5f76b44129aafa979d47f22dcd",
+          "latency_ms": 21.47
+        }
+      ]
+    },
+    {
+      "case_id": "cancel_rule_shipped",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "当前订单状态不允许直接取消，可转人工核实。",
+          "intent": "rule_query",
+          "status": "not_eligible",
+          "intent_source": "model",
+          "intent_slots": {
+            "order_id": "OECD4CD2902",
+            "rule_topic": "cancellation"
+          },
+          "data": {
+            "order_id": "OECD4CD2902",
+            "topic": "cancellation",
+            "policy_version": "CANCEL-DEMO-v1",
+            "source": "merchant://demo/rules/CANCEL-DEMO-v1",
+            "title": "订单取消规则",
+            "policy_text": "演示店铺：待付款或已付款未发货订单可申请取消；定制商品开始制作后、订单已发货或已完成时不能直接取消，需人工核实。实际取消前必须确认，取消订单不代表支付退款到账。",
+            "status": "not_eligible",
+            "reason": "当前订单状态不允许直接取消，可转人工核实。",
+            "facts": {}
+          },
+          "sources": [
+            {
+              "source": "merchant://demo/rules/CANCEL-DEMO-v1",
+              "version": "CANCEL-DEMO-v1",
+              "title": "订单取消规则"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "check_business_rule",
+              "arguments": {
+                "topic": "cancellation",
+                "order_id": "OECD4CD2902",
+                "product_id": null,
+                "quantity": null,
+                "region": null
+              },
+              "success": true,
+              "status": "not_eligible",
+              "duration_ms": 4.0
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "c27b8cc0326543b7bad2f2142a21f9b0",
+          "latency_ms": 2933.12
+        }
+      ]
+    },
+    {
+      "case_id": "invoice_rule_paid",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "48d0fc76c2c94d79be27164efea4b1dc",
+          "latency_ms": 24.98
+        }
+      ]
+    },
+    {
+      "case_id": "price_rule_variant",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "与同一商品当前演示价格比较，参考差额 0.00 元；未提交保价申请或退款。",
+          "intent": "rule_query",
+          "status": "not_eligible",
+          "intent_source": "model",
+          "intent_slots": {
+            "order_id": "O575ABB1E03",
+            "rule_topic": "price_protection"
+          },
+          "data": {
+            "order_id": "O575ABB1E03",
+            "topic": "price_protection",
+            "policy_version": "PRICE-DEMO-v1",
+            "source": "merchant://demo/rules/PRICE-DEMO-v1",
+            "title": "降价保护规则",
+            "policy_text": "演示店铺：非定制商品付款后 168 小时内，同一商品当前商品价低于订单商品实付单价时，可申请核实差价；不计运费、不跨商品比较，定制商品不参与。仅计算参考差额，尚未实现保价申请或自动退款。",
+            "status": "not_eligible",
+            "reason": "与同一商品当前演示价格比较，参考差额 0.00 元；未提交保价申请或退款。",
+            "facts": {
+              "difference_cents": 0
+            }
+          },
+          "sources": [
+            {
+              "source": "merchant://demo/rules/PRICE-DEMO-v1",
+              "version": "PRICE-DEMO-v1",
+              "title": "降价保护规则"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "check_business_rule",
+              "arguments": {
+                "topic": "price_protection",
+                "order_id": "O575ABB1E03",
+                "product_id": null,
+                "quantity": null,
+                "region": null
+              },
+              "success": true,
+              "status": "not_eligible",
+              "duration_ms": 4.22
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "b4b8cd5404db4d8f8ca36402e5f15388",
+          "latency_ms": 4114.03
+        }
+      ]
+    },
+    {
+      "case_id": "logistics_stale_delivered",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "c81917b2e4d1496792afe662ffdaa518",
+          "latency_ms": 22.5
+        }
+      ]
+    },
+    {
+      "case_id": "multiple_rule_topics",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "你问到了多类规则，请分别询问，例如先问优惠，再问运费。",
+          "intent": "rule_query",
+          "status": "clarification_required",
+          "intent_source": "model",
+          "intent_slots": {
+            "product_id": "P100",
+            "rule_topic": "coupon",
+            "quantity": 2
+          },
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "af74c20591cf417bb74ff7c972b6911d",
+          "latency_ms": 6380.01
+        }
+      ]
+    },
+    {
+      "case_id": "policy_general_variant",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "c88c77f1f87c4bebaf2a3cbad12de78b",
+          "latency_ms": 25.97
+        }
+      ]
+    },
+    {
+      "case_id": "return_eligible_variant",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "符合提交无理由退货申请的初步条件，后续还需核实商品完好情况；不代表退款获批。",
+          "intent": "after_sales",
+          "status": "eligible",
+          "intent_source": "model",
+          "intent_slots": {
+            "order_id": "O003E8C0003"
+          },
+          "data": {
+            "order_id": "O003E8C0003",
+            "policy_version": "RETURN-DEMO-v1",
+            "source": "merchant://demo/policies/RETURN-DEMO-v1",
+            "policy_text": "演示店铺规则：普通非定制商品签收后 7×24 小时内可提交无理由退货申请，需后续核实商品完好情况。提交申请不代表退款成功。定制商品、质量争议及超期诉求转人工处理。本规则是项目演示数据，不代表所有商品的法定售后权利。",
+            "eligible": true,
+            "status": "eligible",
+            "reason": "符合提交无理由退货申请的初步条件，后续还需核实商品完好情况；不代表退款获批。",
+            "retrieval_sources": [
+              "merchant://demo/policies/RETURN-DEMO-v1"
+            ]
+          },
+          "sources": [
+            {
+              "source": "merchant://demo/policies/RETURN-DEMO-v1",
+              "version": "RETURN-DEMO-v1",
+              "title": "订单适用售后规则"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "query_order",
+              "arguments": {
+                "order_id": "O003E8C0003"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 4.51
+            },
+            {
+              "tool": "search_knowledge",
+              "arguments": {
+                "query": "退货售后政策",
+                "product_id": null
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 19.27
+            },
+            {
+              "tool": "check_after_sales",
+              "arguments": {
+                "order_id": "O003E8C0003"
+              },
+              "success": true,
+              "status": "eligible",
+              "duration_ms": 3.53
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "7c930fe051644be7a5eb34a51249e7eb",
+          "latency_ms": 5784.2
+        }
+      ]
+    },
+    {
+      "case_id": "return_paid_variant",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "5bf47b24db4a42799aa324e908aceb79",
+          "latency_ms": 24.47
+        }
+      ]
+    },
+    {
+      "case_id": "return_shipped_variant",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "当前订单未处于已签收状态。",
+          "intent": "after_sales",
+          "status": "not_eligible",
+          "intent_source": "model",
+          "intent_slots": {
+            "order_id": "OCBD2974D02"
+          },
+          "data": {
+            "order_id": "OCBD2974D02",
+            "policy_version": "RETURN-DEMO-v1",
+            "source": "merchant://demo/policies/RETURN-DEMO-v1",
+            "policy_text": "演示店铺规则：普通非定制商品签收后 7×24 小时内可提交无理由退货申请，需后续核实商品完好情况。提交申请不代表退款成功。定制商品、质量争议及超期诉求转人工处理。本规则是项目演示数据，不代表所有商品的法定售后权利。",
+            "eligible": false,
+            "status": "not_eligible",
+            "reason": "当前订单未处于已签收状态。",
+            "retrieval_sources": [
+              "merchant://demo/policies/RETURN-DEMO-v1"
+            ]
+          },
+          "sources": [
+            {
+              "source": "merchant://demo/policies/RETURN-DEMO-v1",
+              "version": "RETURN-DEMO-v1",
+              "title": "订单适用售后规则"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "query_order",
+              "arguments": {
+                "order_id": "OCBD2974D02"
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 3.62
+            },
+            {
+              "tool": "search_knowledge",
+              "arguments": {
+                "query": "退货售后政策",
+                "product_id": null
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 15.28
+            },
+            {
+              "tool": "check_after_sales",
+              "arguments": {
+                "order_id": "OCBD2974D02"
+              },
+              "success": true,
+              "status": "not_eligible",
+              "duration_ms": 1.82
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "e987f232bbc54a75a2114aeb60999554",
+          "latency_ms": 5048.86
+        }
+      ]
+    },
+    {
+      "case_id": "return_customized",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "e2bdbf41f9f94a9fb19a327dd56ca538",
+          "latency_ms": 24.09
+        }
+      ]
+    },
+    {
+      "case_id": "after_sale_missing_order",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "以下是演示店铺政策。判断具体订单是否适用，需要提供订单号。\n演示店铺规则：普通非定制商品签收后 7×24 小时内可提交无理由退货申请，需后续核实商品完好情况。提交申请不代表退款成功。定制商品、质量争议及超期诉求转人工处理。本规则是项目演示数据，不代表所有商品的法定售后权利。",
+          "intent": "after_sales",
+          "status": "ok",
+          "intent_source": "model",
+          "intent_slots": {},
+          "data": {
+            "status": "ok",
+            "hits": [
+              {
+                "id": "RETURN-DEMO-v1",
+                "title": "演示店铺无理由退货申请规则",
+                "text": "演示店铺规则：普通非定制商品签收后 7×24 小时内可提交无理由退货申请，需后续核实商品完好情况。提交申请不代表退款成功。定制商品、质量争议及超期诉求转人工处理。本规则是项目演示数据，不代表所有商品的法定售后权利。",
+                "source": "merchant://demo/policies/RETURN-DEMO-v1",
+                "version": "RETURN-DEMO-v1"
+              }
+            ],
+            "backend": "local_keyword"
+          },
+          "sources": [
+            {
+              "source": "merchant://demo/policies/RETURN-DEMO-v1",
+              "version": "RETURN-DEMO-v1",
+              "title": "演示店铺无理由退货申请规则"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "search_knowledge",
+              "arguments": {
+                "query": "我要查退货申请资格",
+                "product_id": null
+              },
+              "success": true,
+              "status": "ok",
+              "duration_ms": 19.17
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "2a02b2e587074c2f99f56dda7ba05df1",
+          "latency_ms": 2251.55
+        }
+      ]
+    },
+    {
+      "case_id": "after_sale_no_application",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "96a54bc4d5af4d0c8e485b89c7901fd2",
+          "latency_ms": 22.24
+        }
+      ]
+    },
+    {
+      "case_id": "after_sale_invalid_id",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "fb10196113c344aa8e8e2e04dba4b738",
+          "latency_ms": 3928.05
+        }
+      ]
+    },
+    {
+      "case_id": "after_sale_multiple_ids",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "13745103decc497a8211d1d93a7aa68a",
+          "latency_ms": 21.95
+        }
+      ]
+    },
+    {
+      "case_id": "cancel_missing_order_variant",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "cancel_order",
+          "status": "clarification_required",
+          "intent_source": "model",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "3009db440b77475e9f30ec09c696ba17",
+          "latency_ms": 1812.31
+        }
+      ]
+    },
+    {
+      "case_id": "cancel_custom_service_boundary",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "0638ad5ab9f84a7cab5984f643fb7780",
+          "latency_ms": 17.66
+        }
+      ]
+    },
+    {
+      "case_id": "withdraw_after_sale_unsupported",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "ecf749d6439e44e29c7cdba46405200d",
+          "latency_ms": 3211.7
+        }
+      ]
+    },
+    {
+      "case_id": "unknown_order",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "订单不存在或不属于当前账号，请核对订单号。",
+          "intent": "order_query",
+          "status": "order_access_denied",
+          "intent_source": "rule",
+          "intent_slots": {},
+          "data": {
+            "error": "order_access_denied"
+          },
+          "sources": [],
+          "tool_trace": [
+            {
+              "tool": "query_order",
+              "arguments": {
+                "order_id": "OABC999"
+              },
+              "success": false,
+              "duration_ms": 4.1
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "3c77ba37cc7e4f45a110bfb4ada4b9dc",
+          "latency_ms": 8.89
+        }
+      ]
+    },
+    {
+      "case_id": "malformed_order_number",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "39c135b8968f464f9477507a1236e911",
+          "latency_ms": 23.77
+        }
+      ]
+    },
+    {
+      "case_id": "multiple_order_ids",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "2cfea7e6dc9647a5b45032a32152fff5",
+          "latency_ms": 3294.82
+        }
+      ]
+    },
+    {
+      "case_id": "sensitive_input_redaction",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "02f351268a254db99fa2fd5ccc6da380",
+          "latency_ms": 22.57
+        }
+      ]
+    },
+    {
+      "case_id": "unsupported_unknown_query",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "db2d6a39b1984f7a885a309362afb1a1",
+          "latency_ms": 8017.59
+        }
+      ]
+    },
+    {
+      "case_id": "negated_cancel",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "请选择或提供要处理的订单号。",
+          "intent": "order_query",
+          "status": "ok",
+          "intent_source": "model",
+          "intent_slots": {},
+          "data": {
+            "status": "ok",
+            "orders": [
+              {
+                "order_id": "O2CE9B69D02",
+                "product_id": "P100",
+                "product_name": "轻享无线耳机",
+                "status": "shipped",
+                "signed_at": null,
+                "version": 1,
+                "policy_version": "RETURN-DEMO-v1"
+              },
+              {
+                "order_id": "O875FAB6903",
+                "product_id": "P200",
+                "product_name": "纯棉基础 T 恤",
+                "status": "delivered",
+                "signed_at": 1791273623.1973038,
+                "version": 1,
+                "policy_version": "RETURN-DEMO-v1"
+              },
+              {
+                "order_id": "O8B89AA4F01",
+                "product_id": "P100",
+                "product_name": "轻享无线耳机",
+                "status": "paid",
+                "signed_at": null,
+                "version": 1,
+                "policy_version": "RETURN-DEMO-v1"
+              }
+            ]
+          },
+          "sources": [],
+          "tool_trace": [
+            {
+              "tool": "list_orders",
+              "arguments": {},
+              "success": true,
+              "status": "ok",
+              "duration_ms": 5.67
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "8cfa4392f63d48b3aad9a9b50357624e",
+          "latency_ms": 2659.55
+        }
+      ]
+    },
+    {
+      "case_id": "injection_foreign_order",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "2bbe4da875f949db9fde0d05c9d50c61",
+          "latency_ms": 24.97
+        }
+      ]
+    },
+    {
+      "case_id": "unsupported_multiple_actions",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "71775b9a95b34f6d8b695917da92d9c8",
+          "latency_ms": 2152.8
+        }
+      ]
+    },
+    {
+      "case_id": "bad_product_id",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "53f82a333b3d4538b67efd92cd42881d",
+          "latency_ms": 26.7
+        }
+      ]
+    },
+    {
+      "case_id": "query_empty_after_redaction",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "未找到可靠商品资料。请提供商品编号或更具体的问题，也可以转人工。",
+          "intent": "other",
+          "status": "no_results",
+          "intent_source": "model",
+          "intent_slots": {},
+          "data": {
+            "status": "no_results",
+            "hits": [],
+            "backend": "local_keyword"
+          },
+          "sources": [],
+          "tool_trace": [
+            {
+              "tool": "search_knowledge",
+              "arguments": {
+                "query": "[地址已隐藏]",
+                "product_id": null
+              },
+              "success": true,
+              "status": "no_results",
+              "duration_ms": 13.48
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "de34259236424ee6a4508fdcd5293ae8",
+          "latency_ms": 1977.03
+        }
+      ]
+    },
+    {
+      "case_id": "unauthorized_rule_variant",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "e871282255114ec48e0393f6576e06a6",
+          "latency_ms": 21.17
+        }
+      ]
+    },
+    {
+      "case_id": "logistics_missing_order",
+      "passed": true,
+      "steps": [
+        {
+          "answer": "请选择或提供要处理的订单号。",
+          "intent": "logistics_query",
+          "status": "clarification_required",
+          "intent_source": "model",
+          "intent_slots": {},
+          "data": {
+            "status": "ok",
+            "orders": [
+              {
+                "order_id": "O12C7EB6A01",
+                "product_id": "P100",
+                "product_name": "轻享无线耳机",
+                "status": "paid",
+                "signed_at": null,
+                "version": 1,
+                "policy_version": "RETURN-DEMO-v1"
+              },
+              {
+                "order_id": "O761C90BB02",
+                "product_id": "P100",
+                "product_name": "轻享无线耳机",
+                "status": "shipped",
+                "signed_at": null,
+                "version": 1,
+                "policy_version": "RETURN-DEMO-v1"
+              },
+              {
+                "order_id": "O8DE0F88B03",
+                "product_id": "P200",
+                "product_name": "纯棉基础 T 恤",
+                "status": "delivered",
+                "signed_at": 1791273633.9086835,
+                "version": 1,
+                "policy_version": "RETURN-DEMO-v1"
+              }
+            ]
+          },
+          "sources": [],
+          "tool_trace": [
+            {
+              "tool": "list_orders",
+              "arguments": {},
+              "success": true,
+              "status": "ok",
+              "duration_ms": 5.58
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "9b13e673e87c4af78e678ab526753500",
+          "latency_ms": 1814.01
+        }
+      ]
+    },
+    {
+      "case_id": "after_sale_progress_missing_id",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "c4d87790bf6e47b8ae4eab75eb0c7513",
+          "latency_ms": 20.34
+        }
+      ]
+    },
+    {
+      "case_id": "return_policy_question_variant",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "演示店铺：待付款或已付款未发货订单可申请取消；定制商品开始制作后、订单已发货或已完成时不能直接取消，需人工核实。实际取消前必须确认，取消订单不代表支付退款到账。",
+          "intent": "rule_query",
+          "status": "policy_info",
+          "intent_source": "model",
+          "intent_slots": {
+            "rule_topic": "cancellation"
+          },
+          "data": {
+            "order_id": null,
+            "topic": "cancellation",
+            "policy_version": "CANCEL-DEMO-v1",
+            "source": "merchant://demo/rules/CANCEL-DEMO-v1",
+            "title": "订单取消规则",
+            "policy_text": "演示店铺：待付款或已付款未发货订单可申请取消；定制商品开始制作后、订单已发货或已完成时不能直接取消，需人工核实。实际取消前必须确认，取消订单不代表支付退款到账。",
+            "status": "policy_info",
+            "reason": "演示店铺：待付款或已付款未发货订单可申请取消；定制商品开始制作后、订单已发货或已完成时不能直接取消，需人工核实。实际取消前必须确认，取消订单不代表支付退款到账。",
+            "facts": {}
+          },
+          "sources": [
+            {
+              "source": "merchant://demo/rules/CANCEL-DEMO-v1",
+              "version": "CANCEL-DEMO-v1",
+              "title": "订单取消规则"
+            }
+          ],
+          "tool_trace": [
+            {
+              "tool": "check_business_rule",
+              "arguments": {
+                "topic": "cancellation",
+                "order_id": null,
+                "product_id": null,
+                "quantity": null,
+                "region": null
+              },
+              "success": true,
+              "status": "policy_info",
+              "duration_ms": 5.42
+            }
+          ],
+          "conversation_id": "eval",
+          "request_id": "b32116e37c7c448ea7bdbacfd9360aaf",
+          "latency_ms": 2757.0
+        }
+      ]
+    },
+    {
+      "case_id": "cancel_question_without_order",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "310608b0c4fa4f2db1b6dcfc7b4b3d0c",
+          "latency_ms": 22.92
+        }
+      ]
+    },
+    {
+      "case_id": "ambiguous_followup_without_context",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "1ef1e40e7b814aad824195fd9ce676a6",
+          "latency_ms": 2890.68
+        }
+      ]
+    },
+    {
+      "case_id": "bad_after_sale_id_format",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model_fallback",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "32ed1a5333ab436c9d58bae4b9084e37",
+          "latency_ms": 23.65
+        }
+      ]
+    },
+    {
+      "case_id": "multi_intent_order_rule",
+      "passed": false,
+      "steps": [
+        {
+          "answer": "请明确这次要查询或办理的一件事，并提供相关订单或商品编号。",
+          "intent": "other",
+          "status": "clarification_required",
+          "intent_source": "model",
+          "intent_slots": {},
+          "data": {},
+          "sources": [],
+          "tool_trace": [],
+          "conversation_id": "eval",
+          "request_id": "5360d8e28ecf475ea9bc3a997d861c02",
+          "latency_ms": 2224.19
+        }
+      ]
+    }
+  ]
+}

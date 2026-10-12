@@ -1,0 +1,54 @@
+D:\ChunZhao\Agent - ����\.venv\Lib\site-packages\langgraph\cache\base\__init__.py:8: LangChainPendingDeprecationWarning: The default value of `allowed_objects` will change in a future version. Pass an explicit value (e.g., allowed_objects='messages' or allowed_objects='core') to suppress this warning.
+  from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
+2026-10-08 15:56:28,363 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:56:32,657 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:56:37,239 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:56:42,346 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:56:47,200 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:56:52,681 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:56:58,413 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:57:06,439 WARNING app.commerce.intent Semantic intent recognition failed (TimeoutError); requesting clarification
+2026-10-08 15:57:13,843 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:57:18,941 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:57:24,756 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:57:28,922 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:57:33,431 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:57:37,501 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:57:44,654 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:57:49,568 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:57:57,869 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:58:01,186 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:58:09,635 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:58:13,797 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:58:21,158 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:58:26,388 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:58:29,620 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:58:38,297 WARNING app.commerce.intent Semantic intent recognition failed (TimeoutError); requesting clarification
+2026-10-08 15:58:46,915 WARNING app.commerce.intent Semantic intent recognition failed (TimeoutError); requesting clarification
+2026-10-08 15:58:54,603 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:58:58,109 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:59:05,306 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:59:09,922 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:59:17,178 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:59:20,942 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:59:25,302 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:59:30,713 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:59:38,414 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:59:45,871 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:59:52,317 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 15:59:55,978 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 16:00:00,597 WARNING app.commerce.intent Semantic intent recognition failed (ValidationError); requesting clarification
+2026-10-08 16:00:01,238 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 16:00:04,262 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 16:00:09,603 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 16:00:14,187 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 16:00:22,830 WARNING app.commerce.intent Semantic intent recognition failed (TimeoutError); requesting clarification
+2026-10-08 16:00:26,870 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 16:00:30,358 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 16:00:33,603 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 16:00:36,713 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+D:\ChunZhao\Agent - ����\app\commerce\seed.py:38: SAWarning: fully NULL primary key identity cannot load any object.  This condition may raise an error in a future release.
+  p = db.get(Product, product_id)
+2026-10-08 16:00:41,051 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+2026-10-08 16:00:45,533 WARNING app.commerce.intent Semantic intent recognition failed (APIConnectionError); requesting clarification
+{"total_cases": 100, "passed_cases": 34, "task_completion_rate": 0.34, "intent_accuracy": 0.4757, "intent_accuracy_e2e": 0.4757, "intent_accuracy_when_model_returned": 0.8478, "intent_source_counts": {"model": 46, "model_fallback": 49, "rule": 8}, "model_intent_fallback_rate": 0.5158, "order_parameter_accuracy": 0.5581, "order_parameter_accuracy_e2e": 0.5581, "order_parameter_accuracy_when_tool_reached": 1.0, "order_parameter_tool_reach_rate": 0.5581, "order_parameter_cases_not_reached_after_model_fallback": 19, "unauthorized_intercept_rate": 0.6667, "unauthorized_intercept_rate_e2e": 0.6667, "unauthorized_business_reach_rate": 0.6667, "unauthorized_intercept_rate_when_business_reached": 1.0, "unauthorized_no_leak_rate": 1.0, "average_latency_ms": 1987.96, "p95_latency_ms": 7221.85, "model_intent_call_rate": 0.9223, "model_intent_success_rate": 0.4842, "metric_denominators": {"intent_all_steps": 103, "intent_model_returned": 46, "intent_model_attempted": 95, "order_parameter_expected": 43, "order_parameter_tool_reached": 24, "unauthorized_cases": 6, "unauthorized_business_reached": 4}, "metric_counts": {"intent_all_correct": 49, "intent_model_returned_correct": 39, "order_parameter_e2e_correct": 24, "order_parameter_correct_when_tool_reached": 24, "unauthorized_e2e_intercepted": 4, "unauthorized_intercepted_when_business_reached": 4, "unauthorized_cases_without_data_leak": 6}, "rag_tool_calls": null, "rag_nonempty_result_rate": null, "rag_expected_evidence_coverage": null, "rag_no_result_rejection_rate": null}

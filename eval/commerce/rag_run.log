@@ -1,0 +1,5 @@
+D:\ChunZhao\Agent - ����\.venv\Lib\site-packages\langgraph\cache\base\__init__.py:8: LangChainPendingDeprecationWarning: The default value of `allowed_objects` will change in a future version. Pass an explicit value (e.g., allowed_objects='messages' or allowed_objects='core') to suppress this warning.
+  from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
+D:\ChunZhao\Agent - ����\app\commerce\seed.py:38: SAWarning: fully NULL primary key identity cannot load any object.  This condition may raise an error in a future release.
+  p = db.get(Product, product_id)
+{"total_cases": 100, "passed_cases": 90, "task_completion_rate": 0.9, "intent_accuracy": 1.0, "order_parameter_accuracy": 1.0, "unauthorized_intercept_rate": 1.0, "average_latency_ms": 274.07, "p95_latency_ms": 1293.88, "model_intent_call_rate": null, "model_intent_fallback_rate": null, "rag_tool_calls": 22, "rag_nonempty_result_rate": 1.0, "rag_expected_evidence_coverage": 0.8333, "rag_no_result_rejection_rate": 0.0}

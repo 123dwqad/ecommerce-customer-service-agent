@@ -1,0 +1,15 @@
+.venv/
+.venv_*/
+.runlogs/
+*.db
+*.db-shm
+*.db-wal
+__pycache__/
+*.pyc
+.env
+.env.prod
+.env.commerce
+.env.multimodal
+data/
+.idea/
+.vscode/
